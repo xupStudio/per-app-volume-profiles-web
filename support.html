@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — Per-App Volume Profiles</title>
+    <meta name="description" content="Support and contact for Per-App Volume Profiles (AppVolume).">
+    <meta name="theme-color" content="#0E0F1A">
+
+    <link rel="icon" href="assets/app-icon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/app-icon.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/app-icon.png" alt="Per-App Volume Profiles" class="nav-logo-img">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-name">Per-App Volume Profiles</span>
+                    <span class="nav-logo-tag">AppVolume</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                    <i class="fas fa-globe"></i>
+                    <span class="lang-toggle-text">EN</span>
+                </button>
+                <a href="index.html" class="btn btn-download">
+                    <i class="fas fa-arrow-left"></i>
+                    <span data-lang="zh">回首頁</span>
+                    <span data-lang="en" style="display:none;">Back</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="legal-section">
+            <h1 data-lang="zh">支援與聯絡</h1>
+            <h1 data-lang="en" style="display:none;">Support &amp; Contact</h1>
+
+            <p class="updated">
+                <span data-lang="zh">最後更新：2026 年 5 月 26 日</span>
+                <span data-lang="en" style="display:none;">Last updated: 26 May 2026</span>
+            </p>
+
+            <!-- zh -->
+            <div data-lang="zh">
+                <h2>聯絡我們</h2>
+                <p>有任何問題、bug 回報、功能建議、商務合作，請寄信至：</p>
+                <p><a href="mailto:support@xupstudio.com">support@xupstudio.com</a></p>
+                <p>我們通常會在 1–3 個工作日內回覆。中文 / English 都可以。</p>
+
+                <h2>回報 Bug 時請附上</h2>
+                <ul>
+                    <li><strong>iOS 版本</strong>（設定 → 一般 → 關於本機 → 軟體版本）</li>
+                    <li><strong>裝置型號</strong>（同上頁面的「型號名稱」）</li>
+                    <li><strong>App 版本</strong>（在 App → 設定 → 關於 中查看）</li>
+                    <li><strong>重現步驟</strong>（哪幾步操作會觸發問題）</li>
+                    <li><strong>截圖或錄影</strong>（如果方便）</li>
+                </ul>
+                <p>這樣可以大幅加快我們找到問題的速度，謝謝你！</p>
+
+                <h2>常見問題</h2>
+
+                <h3>Q1. 為什麼 iOS 18.1 以下需要每個 App 都設定一次？</h3>
+                <p>Apple 在 iOS 18.2 才開放 「Get Current App」 Shortcuts action。在那之前，Personal Automations 的 「App Opened」 trigger 只能綁一個特定 App，所以每個 App 都需要獨立的 Automation。我們的設定精靈會逐 App 帶你建立，盡量減少摩擦。</p>
+
+                <h3>Q2. Personal Automation 為什麼不能由 App 自動建立？</h3>
+                <p>Apple 從未開放任何 API 或 URL scheme 讓第三方 App 程式化建立、預填或分享 Personal Automations。截至 iOS 26.5 仍是如此。這是 Apple 端的硬限制，我們只能用設定精靈引導你手動建立。</p>
+
+                <h3>Q3. Set Volume 動作有時候會延遲或失敗？</h3>
+                <p>這是 Apple Shortcuts 系統的已知 timing race condition。我們在生成的 Shortcut 範本內已加上 「Set Volume X → Wait 0.5s → Set Volume X」 雙保險範本，能大幅降低失敗率，但無法 100% 消除。</p>
+
+                <h3>Q4. iCloud 同步沒有作用？</h3>
+                <p>請確認：(1) iOS 設定 → [你的名字] → iCloud → iCloud Drive 已開啟；(2) 在 App 設定中已開啟 iCloud 同步；(3) 兩台裝置登入同一個 iCloud 帳號。</p>
+
+                <h3>Q5. HealthKit 顯示沒有資料？</h3>
+                <p>HealthKit 的耳機音量暴露資料需要你使用相容耳機（AirPods 系列或 MFi 認證耳機）一段時間後才會累積。請至少使用 2–3 天，並確認 iOS 設定 → 隱私權與安全性 → 健康 → Per-App Volume Profiles 中已開啟相關存取權限。</p>
+
+                <h2>追蹤更新</h2>
+                <p>關注 <a href="https://github.com/xupStudio" target="_blank" rel="noopener">GitHub @xupStudio</a> 或 訂閱我們的 release notes，獲得新版本通知。</p>
+            </div>
+
+            <!-- en -->
+            <div data-lang="en" style="display:none;">
+                <h2>Contact Us</h2>
+                <p>Questions, bug reports, feature requests, business inquiries — please email:</p>
+                <p><a href="mailto:support@xupstudio.com">support@xupstudio.com</a></p>
+                <p>We typically reply within 1–3 business days. English or Chinese both work.</p>
+
+                <h2>When Reporting a Bug</h2>
+                <p>Please include:</p>
+                <ul>
+                    <li><strong>iOS version</strong> (Settings → General → About → Software Version)</li>
+                    <li><strong>Device model</strong> (same screen, "Model Name")</li>
+                    <li><strong>App version</strong> (in-app: Settings → About)</li>
+                    <li><strong>Steps to reproduce</strong> (what tap sequence triggers the issue)</li>
+                    <li><strong>Screenshot or screen recording</strong> if convenient</li>
+                </ul>
+                <p>This dramatically speeds up our investigation. Thanks!</p>
+
+                <h2>Frequently Asked Questions</h2>
+
+                <h3>Q1. Why does iOS 18.1 or earlier require per-app setup?</h3>
+                <p>Apple only introduced the "Get Current App" Shortcuts action in iOS 18.2. Before that, the Personal Automations "When App Is Opened" trigger could only bind to one specific app, requiring a separate Automation per app. Our setup wizard walks you through each one to minimize friction.</p>
+
+                <h3>Q2. Why can't the App create Personal Automations automatically?</h3>
+                <p>Apple has never opened any API or URL scheme for third-party apps to programmatically create, pre-fill, or share Personal Automations. As of iOS 26.5 this is still the case. It's a hard restriction on Apple's side; the best we can do is guide you through manual setup.</p>
+
+                <h3>Q3. Set Volume sometimes lags or fails?</h3>
+                <p>That's a known timing race condition in Apple's Shortcuts system. We mitigate it by generating "Set Volume X → Wait 0.5s → Set Volume X" double-tap templates in every Shortcut. It dramatically reduces failure rates but can't fully eliminate them.</p>
+
+                <h3>Q4. iCloud sync isn't working?</h3>
+                <p>Check: (1) iOS Settings → [your name] → iCloud → iCloud Drive is enabled; (2) iCloud Sync is enabled in the App's settings; (3) both devices are signed into the same iCloud account.</p>
+
+                <h3>Q5. HealthKit shows no data?</h3>
+                <p>HealthKit headphone exposure data only accumulates after you've used compatible headphones (AirPods family or MFi-certified) for some time. Use them for at least 2–3 days, and verify Settings → Privacy &amp; Security → Health → Per-App Volume Profiles has the relevant permission granted.</p>
+
+                <h2>Stay Updated</h2>
+                <p>Follow <a href="https://github.com/xupStudio" target="_blank" rel="noopener">GitHub @xupStudio</a> or subscribe to release notes for new version announcements.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/app-icon.png" alt="" class="footer-logo">
+                <div>
+                    <strong>Per-App Volume Profiles</strong>
+                    <span data-lang="zh">每個 App，都有它自己的音量。</span>
+                    <span data-lang="en" style="display:none;">Every app, its own volume.</span>
+                </div>
+            </div>
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <h5 data-lang="zh">產品</h5>
+                    <h5 data-lang="en" style="display:none;">Product</h5>
+                    <a href="index.html#features" data-lang="zh">功能</a>
+                    <a href="index.html#features" data-lang="en" style="display:none;">Features</a>
+                    <a href="index.html#hearing" data-lang="zh">聽力健康</a>
+                    <a href="index.html#hearing" data-lang="en" style="display:none;">Hearing Health</a>
+                </div>
+                <div class="footer-col">
+                    <h5 data-lang="zh">法律</h5>
+                    <h5 data-lang="en" style="display:none;">Legal</h5>
+                    <a href="privacy.html" data-lang="zh">隱私權政策</a>
+                    <a href="privacy.html" data-lang="en" style="display:none;">Privacy Policy</a>
+                    <a href="terms.html" data-lang="zh">使用條款</a>
+                    <a href="terms.html" data-lang="en" style="display:none;">Terms of Use</a>
+                </div>
+                <div class="footer-col">
+                    <h5 data-lang="zh">支援</h5>
+                    <h5 data-lang="en" style="display:none;">Support</h5>
+                    <a href="support.html" data-lang="zh">聯絡支援</a>
+                    <a href="support.html" data-lang="en" style="display:none;">Contact Support</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 xup Studio · Per-App Volume Profiles</span>
+            <span class="footer-badge"><i class="fab fa-apple"></i> Designed for iPhone &amp; iPad</span>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
