@@ -909,9 +909,9 @@ a { color: inherit; text-decoration: none; transition: all 0.2s var(--ease); }
 
 .privacy-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 920px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
