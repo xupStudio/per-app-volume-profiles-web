@@ -67,10 +67,12 @@
 
                 <h3>5.2 使用分析（Firebase Analytics）</h3>
                 <p>使用分析預設開啟，會收集與匿名 UID 或裝置／安裝識別碼連結的產品互動，例如導引步驟、情境模式與規則數量的分桶、功能開啟、Widget／控制中心互動、備份結果、精選模式安裝與評分提示。分析資料<strong>不包含</strong>你輸入的情境模式名稱、你加入的 App bundle ID、回饋文字或 email。</p>
+                <p>Google Analytics 會從遮蔽後的 IP 位址推算概略地區（例如城市或區域），並將它與匿名 UID 或裝置／安裝識別碼連結。本 App 不會存取 Apple 的「定位服務」，也不會收集 GPS 精確位置。</p>
                 <p>為了解使用者偏好的音量範圍，分析也可能傳送 0–100% 的音量百分比、喇叭或耳機聲道、設定來源、是否啟用，以及粗略 App 類別（例如音樂、影片、社群或遊戲）。這些操作事件與每日最多一次的設定狀態快照不包含 App 名稱、bundle ID（包括其雜湊）、規則 ID、情境模式 ID 或情境模式名稱。</p>
 
                 <h3>5.3 當機與診斷（Firebase Crashlytics）</h3>
                 <p>Crashlytics 預設開啟，可能收集當機堆疊、非致命錯誤、效能與其他診斷資料、裝置／作業系統資訊、App 版本，以及診斷問題所需的非個人狀態（例如情境模式 UUID 與功能狀態）。它不會刻意收集模式名稱或 App 規則中的 bundle ID。</p>
+                <p>情境模式 UUID 也可能出現在產品分析中，因此當機與診斷資料可能與同一匿名使用者或安裝狀態建立關聯。</p>
 
                 <h3>5.4 關閉分析與當機回報</h3>
                 <p>前往 App Volume → 設定 → 進階，關閉「分享匿名使用分析」，即可同時停用 Firebase Analytics 與 Crashlytics 收集。這個開關預設為開啟。</p>
@@ -84,7 +86,7 @@
                     <li>App 版本與 build、iOS / iPadOS 版本、裝置型號與語言；</li>
                     <li>情境模式數量、目前存取狀態與匿名 Firebase UID。</li>
                 </ul>
-                <p>回饋不會自動附上情境模式名稱或 App 清單。若你自行在回饋文字中輸入個人資訊，我們會收到那些內容。回饋用於回覆問題、修復錯誤、改善產品與防止濫用。</p>
+                <p>這些客服診斷與使用狀態會和匿名 UID，以及你選填的 email 一起儲存。回饋不會自動附上情境模式名稱或 App 清單。若你自行在回饋文字中輸入個人資訊，我們會收到那些內容。回饋用於回覆問題、修復錯誤、改善產品與防止濫用。</p>
 
                 <h2>6. 我們不做的事</h2>
                 <ul>
@@ -154,10 +156,12 @@
 
                 <h3>5.2 Usage Analytics (Firebase Analytics)</h3>
                 <p>Usage analytics is on by default. It collects product interactions linked to the anonymous UID or device/installation identifiers, such as onboarding steps, bucketed Mode and rule counts, feature opens, widget or Control Center interactions, backup results, curated Mode installs, and review prompts. Analytics <strong>does not include</strong> Mode names you enter, bundle IDs of apps you add, feedback text, or email.</p>
+                <p>Google Analytics derives an approximate region, such as a city or region, from a masked IP address and links it to the anonymous UID or device/installation identifier. The app never accesses Apple's Location Services or collects precise GPS location.</p>
                 <p>To understand preferred volume ranges, analytics may also send a 0–100% volume percentage, speaker or headphone channel, configuration source, enabled state, and a broad app category such as music, video, social, or gaming. These action events and at-most-daily configuration snapshots contain no app name, bundle ID (including a hash), rule ID, Mode ID, or Mode name.</p>
 
                 <h3>5.3 Crash &amp; Diagnostic Data (Firebase Crashlytics)</h3>
                 <p>Crashlytics is on by default and may collect crash stacks, non-fatal errors, performance and other diagnostic data, device and operating-system information, app version, and non-personal state needed to diagnose a problem (such as a Mode UUID and feature state). It does not intentionally collect Mode names or bundle IDs from your app rules.</p>
+                <p>A Mode UUID may also appear in product analytics, so crash and diagnostic data may be associated with the same anonymous user or installation state.</p>
 
                 <h3>5.4 Turn Off Analytics &amp; Crash Reports</h3>
                 <p>Go to App Volume → Settings → Advanced and turn off “Share anonymous analytics” to disable collection by both Firebase Analytics and Crashlytics. This setting is on by default.</p>
@@ -171,7 +175,7 @@
                     <li>App version and build, iOS / iPadOS version, device model, and locale;</li>
                     <li>Mode count, current access state, and anonymous Firebase UID.</li>
                 </ul>
-                <p>Feedback does not automatically include Mode names or your app list. If you type personal information into the message, we receive what you type. We use feedback to respond, fix bugs, improve the product, and prevent abuse.</p>
+                <p>These support diagnostics and usage-state fields are stored with the anonymous UID and any email you choose to provide. Feedback does not automatically include Mode names or your app list. If you type personal information into the message, we receive what you type. We use feedback to respond, fix bugs, improve the product, and prevent abuse.</p>
 
                 <h2>6. What We Do Not Do</h2>
                 <ul>
