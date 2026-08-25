@@ -4,20 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Per-App Volume Profiles</title>
-    <meta name="description" content="Privacy Policy for Per-App Volume Profiles (AppVolume).">
+    <title>Privacy Policy — App Volume</title>
+    <meta name="description" content="Privacy Policy for App Volume.">
     <meta name="theme-color" content="#0E0F1A">
-
     <link rel="icon" href="assets/app-icon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/app-icon.png">
-
     <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -25,219 +20,209 @@
     <nav class="navbar">
         <div class="container nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="assets/app-icon.png" alt="Per-App Volume Profiles" class="nav-logo-img">
-                <div class="nav-logo-text">
-                    <span class="nav-logo-name">Per-App Volume Profiles</span>
-                    <span class="nav-logo-tag">AppVolume</span>
-                </div>
+                <img src="assets/app-icon.png" alt="App Volume" class="nav-logo-img">
+                <div class="nav-logo-text"><span class="nav-logo-name">App Volume</span><span class="nav-logo-tag" data-lang="zh">應用音量</span><span class="nav-logo-tag" data-lang="en" style="display:none;">A volume per app</span></div>
             </a>
             <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-                    <i class="fas fa-globe"></i>
-                    <span class="lang-toggle-text">EN</span>
-                </button>
-                <a href="index.html" class="btn btn-download">
-                    <i class="fas fa-arrow-left"></i>
-                    <span data-lang="zh">回首頁</span>
-                    <span data-lang="en" style="display:none;">Back</span>
-                </a>
+                <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language"><i class="fas fa-globe"></i><span class="lang-toggle-text">EN</span></button>
+                <a href="index.html" class="btn btn-download"><i class="fas fa-arrow-left"></i><span data-lang="zh">回首頁</span><span data-lang="en" style="display:none;">Back</span></a>
             </div>
         </div>
     </nav>
 
     <main class="container">
         <article class="legal-section">
-            <h1 data-lang="zh">隱私權政策</h1>
-            <h1 data-lang="en" style="display:none;">Privacy Policy</h1>
+            <h1 data-lang="zh">隱私權政策</h1><h1 data-lang="en" style="display:none;">Privacy Policy</h1>
+            <p class="updated"><span data-lang="zh">最後更新：2026 年 8 月 25 日</span><span data-lang="en" style="display:none;">Last updated: 25 August 2026</span></p>
 
-            <p class="updated">
-                <span data-lang="zh">最後更新：2026 年 5 月 26 日</span>
-                <span data-lang="en" style="display:none;">Last updated: 26 May 2026</span>
-            </p>
-
-            <!-- zh -->
             <div data-lang="zh">
-                <p>Per-App Volume Profiles（主畫面 icon 顯示為 <strong>AppVolume</strong>，以下簡稱「本 App」）由 xup Studio 開發。我們從第一天就為隱私而設計，本政策說明我們收集了什麼、為什麼、以及你的選擇。</p>
+                <p>App Volume（繁體中文名稱「應用音量」，以下稱「本 App」）由 xup Studio 開發。本政策說明本 App 與本網站如何處理資料，以及你可以做出的選擇。</p>
 
-                <h2>1. 簡而言之</h2>
+                <h2>1. 重點摘要</h2>
                 <ul>
-                    <li>所有設定檔、規則、HealthKit 資料 <strong>只儲存在你的裝置與你的 iCloud 私人區</strong>。</li>
-                    <li>我們 <strong>沒有伺服器</strong> 儲存使用者的個人健康或行為資料。</li>
-                    <li>不接第三方廣告 SDK、不販售資料、不建立跨 App 使用畫像。</li>
+                    <li>你建立的情境模式、App 規則與音量值預設保存在裝置上。</li>
+                    <li>你可以選擇備份到自己的 Apple CloudKit 私人資料庫；這是備份與還原，不是即時跨裝置同步。</li>
+                    <li>我們使用 Google Firebase 提供匿名驗證、服務保護、遠端設定、探索內容、分析、當機診斷與你主動送出的回饋。</li>
+                    <li>我們不使用資料做跨公司或跨 App 廣告追蹤，不出售或出租個人資料，也不使用廣告 SDK。</li>
                 </ul>
 
-                <h2>2. 我們收集的資訊</h2>
+                <h2>2. 保存在裝置上的資料</h2>
+                <p>情境模式、App 規則（包括 App 識別資訊與音量）、全域規則、耳機音量設定、使用統計與偏好設定主要儲存在裝置上。一般使用不會把你的情境模式名稱、App 名稱／bundle ID 或完整規則內容上傳給 xup Studio；啟用分析時可能傳送的衍生統計欄位詳見第 5.2 節。</p>
 
-                <h3>2.1 你在 App 內建立的內容（本機）</h3>
-                <p>設定檔、音量規則、觸發條件、自訂偏好設定。這些資料只儲存在裝置本機（SwiftData）與你的 iCloud 私人 CloudKit 區。我們的開發者無法從伺服器端讀取。</p>
+                <h2>3. iCloud 私人備份</h2>
+                <p>當你手動備份或開啟自動備份時，本 App 會把情境模式、規則與相關設定寫入<strong>你自己的 CloudKit 私人資料庫</strong>。xup Studio 無法在開發者後台瀏覽你的私人資料庫內容。還原是由你主動執行；本功能不會即時合併多台裝置上的變更。</p>
+                <p>你可以在本 App 設定中關閉自動備份，並透過 Apple 的 iCloud 儲存空間管理工具刪除相關資料。</p>
 
-                <h3>2.2 HealthKit 資料（本機）</h3>
-                <p>若你授權，我們會讀取 <code>HKQuantityTypeIdentifier.headphoneAudioExposure</code>（耳機音量暴露）來呈現 7 天 / 24 小時趨勢與過量門檻提醒。HealthKit 原始資料 <strong>一律本機處理，從不離開你的裝置</strong>。</p>
+                <h2>4. 探索與分享</h2>
+                <h3>4.1 探索</h3>
+                <p>「探索」會從 Firebase Firestore 讀取 xup Studio 維護的精選情境模式。本 App 可能記錄精選項目的識別碼、安裝事件、App 版本與時間，以評估哪些公開內容有用；瀏覽精選內容不會上傳你的私人情境模式或 App 清單。</p>
 
-                <h3>2.3 匿名分析資料（Firebase Analytics）</h3>
-                <p>我們會記錄 <strong>匿名功能事件</strong>，例如：onboarding 步驟完成、widget 新增、設定檔建立次數、paywall 顯示次數、評分提示展示等。這些事件 <strong>不含</strong>：</p>
+                <h3>4.2 你主動分享的情境模式</h3>
+                <p>建立分享連結時，情境模式名稱與匯入所需規則（包括 App 識別資訊與音量值）會被編碼到連結中。任何取得連結的人都可以查看並匯入這些內容，連結服務與網路提供者也可能處理一般連線中繼資料。請不要在模式名稱中放入不希望分享的個人資訊。</p>
+
+                <h2>5. Firebase 與我們收集的資料</h2>
+                <h3>5.1 匿名驗證、App Check 與必要設定服務</h3>
+                <p>本 App 啟動時會使用 Firebase Authentication 建立或恢復一個<strong>匿名使用者 ID（UID）</strong>。它不包含你的姓名或 Apple ID，但會作為持續的假名識別碼，用於保護 Firestore 請求、授權回饋提交，並在分析開啟時連結同一安裝或登入狀態的產品事件。</p>
+                <p>Firebase App Check（正式版使用 Apple DeviceCheck）、Firebase Installations 與 Remote Config 會處理服務運作、相容性與完整性檢查所需的裝置／安裝識別碼、App 與系統版本、網路請求及安全證明。Remote Config 用來取得捷徑範本位置、相容性／更新資訊與功能設定。</p>
+
+                <h3>5.2 使用分析（Firebase Analytics）</h3>
+                <p>使用分析預設開啟，會收集與匿名 UID 或裝置／安裝識別碼連結的產品互動，例如導引步驟、情境模式與規則數量的分桶、功能開啟、Widget／控制中心互動、備份結果、精選模式安裝與評分提示。分析資料<strong>不包含</strong>你輸入的情境模式名稱、你加入的 App bundle ID、回饋文字或 email。</p>
+                <p>為了解使用者偏好的音量範圍，分析也可能傳送 0–100% 的音量百分比、喇叭或耳機聲道、設定來源、是否啟用，以及粗略 App 類別（例如音樂、影片、社群或遊戲）。這些操作事件與每日最多一次的設定狀態快照不包含 App 名稱、bundle ID（包括其雜湊）、規則 ID、情境模式 ID 或情境模式名稱。</p>
+
+                <h3>5.3 當機與診斷（Firebase Crashlytics）</h3>
+                <p>Crashlytics 預設開啟，可能收集當機堆疊、非致命錯誤、效能與其他診斷資料、裝置／作業系統資訊、App 版本，以及診斷問題所需的非個人狀態（例如情境模式 UUID 與功能狀態）。它不會刻意收集模式名稱或 App 規則中的 bundle ID。</p>
+
+                <h3>5.4 關閉分析與當機回報</h3>
+                <p>前往 App Volume → 設定 → 進階，關閉「分享匿名使用分析」，即可同時停用 Firebase Analytics 與 Crashlytics 收集。這個開關預設為開啟。</p>
+                <p>關閉後，為了讓本 App 提供安全且可用的線上功能，匿名 Firebase Authentication、App Check、Remote Config，以及你主動使用「探索」或送出回饋時的 Firestore 請求仍會運作。這些必要服務不會因遙測開關而停用。</p>
+
+                <h3>5.5 你主動送出的回饋（Firebase Firestore）</h3>
+                <p>只有在你按下送出時，我們才會儲存以下資料：</p>
                 <ul>
-                    <li>你建立的設定檔名稱（使用者輸入）</li>
-                    <li>規則中的 target App bundle ID（可推斷使用習慣）</li>
-                    <li>HealthKit 原始 dB 數值</li>
-                    <li>email 或任何個人標識資訊</li>
+                    <li>1–5 分評分、回饋文字（最多 200 字）與提交時間；</li>
+                    <li>選填的 email；</li>
+                    <li>App 版本與 build、iOS / iPadOS 版本、裝置型號與語言；</li>
+                    <li>情境模式數量、目前存取狀態與匿名 Firebase UID。</li>
+                </ul>
+                <p>回饋不會自動附上情境模式名稱或 App 清單。若你自行在回饋文字中輸入個人資訊，我們會收到那些內容。回饋用於回覆問題、修復錯誤、改善產品與防止濫用。</p>
+
+                <h2>6. 我們不做的事</h2>
+                <ul>
+                    <li>不使用 Apple 的廣告識別碼（IDFA）做追蹤。</li>
+                    <li>不把資料與第三方廣告資料結合，也不建立跨 App 廣告使用者畫像。</li>
+                    <li>不出售或出租個人資料。</li>
+                    <li>不在 Analytics 或 Crashlytics 中傳送你的模式名稱或 App 規則清單。</li>
                 </ul>
 
-                <h3>2.4 當機紀錄（Firebase Crashlytics）</h3>
-                <p>當 App 異常終止時，我們會收集匿名當機堆疊與當下的功能旗標（active profile ID 為 UUID、IAP 狀態為 free/pro）。這幫助我們修復 bug，不用於識別個人。</p>
-
-                <h3>2.5 回饋表單（Firebase Firestore）</h3>
-                <p>若你主動在設定頁送出回饋，我們會儲存：評分、留言、App 版本、iOS 版本、裝置型號、locale、活躍設定檔數量、是否為 Pro 訂閱者。Email 為選填。</p>
-
-                <h2>3. 我們不做什麼</h2>
+                <h2>7. 第三方服務</h2>
                 <ul>
-                    <li>不接第三方廣告 SDK。</li>
-                    <li>不販售或出租任何資料給第三方。</li>
-                    <li>不建立跨 App 使用者畫像。</li>
-                    <li>不上傳你的 HealthKit 原始數據。</li>
-                    <li>不在 Analytics 中傳輸使用者輸入的字串。</li>
+                    <li><strong>Apple</strong>：iOS / iPadOS、「捷徑」、CloudKit、App Store 與 DeviceCheck。受 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隱私權政策</a> 規範。</li>
+                    <li><strong>Google Firebase</strong>：Analytics、Crashlytics、Authentication、App Check、Installations、Remote Config、Firestore 與 Hosting。受 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私權與安全資訊</a> 規範。</li>
+                </ul>
+                <p>第三方可能依其基礎設施在你所在國家／地區以外處理資料。</p>
+
+                <h2>8. 保留與安全</h2>
+                <p>裝置與 iCloud 私人備份資料由你控制。分析與診斷資料依 Firebase 專案設定及 Google 的保留政策處理。回饋資料只在回覆、診斷、改善產品、防濫用與履行法律義務所需期間保留。我們使用平台存取控制與匿名驗證降低未授權存取風險，但任何系統都無法保證絕對安全。</p>
+
+                <h2>9. 你的選擇與刪除</h2>
+                <ul>
+                    <li>刪除 App 可移除裝置上的本機資料。</li>
+                    <li>可在 App 設定關閉自動備份，並在 Apple 的 iCloud 儲存空間管理中刪除私人備份。</li>
+                    <li>可在 App 設定關閉 Analytics 與 Crashlytics。</li>
+                    <li>回饋 email 是選填；若要詢問或要求刪除可識別的回饋，請聯絡我們並提供提交日期與足以辨識該筆回饋的資訊。</li>
                 </ul>
 
-                <h2>4. iCloud 同步</h2>
-                <p>設定檔備份使用 Apple 的 CloudKit 私人區（private database）。資料儲存在 <strong>你自己的 iCloud 帳號</strong>，xup Studio 沒有讀取權限。停止同步時請在 iOS 設定 → [你的名字] → iCloud → 管理儲存空間中移除「Per-App Volume Profiles」的資料。</p>
+                <h2>10. 兒童隱私</h2>
+                <p>本 App 不是特別為 13 歲以下兒童設計。我們不會在知情情況下要求兒童提供個人資訊；若你認為兒童已提交個人資訊，請聯絡我們。</p>
 
-                <h2>5. 第三方服務</h2>
-                <ul>
-                    <li><strong>Apple</strong>（iOS、Shortcuts、HealthKit、CloudKit、StoreKit）— 受 Apple 隱私權政策保護。</li>
-                    <li><strong>Google Firebase</strong>（Analytics / Crashlytics / Firestore / App Check / Authentication）— 受 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私權政策</a> 保護。</li>
-                </ul>
+                <h2>11. 本網站</h2>
+                <p>本網站是靜態網站，沒有自行設定分析 cookie。語言切換偏好會保存在瀏覽器的 localStorage。本網站載入 Google Fonts 與 cdnjs 的 Font Awesome；網站主機與這些 CDN 可能收到 IP 位址、瀏覽器資訊與一般伺服器請求紀錄。</p>
 
-                <h2>6. 兒童隱私</h2>
-                <p>本 App 不主動針對 13 歲以下兒童。我們不會在知情情況下收集兒童的個人資訊。</p>
-
-                <h2>7. 你的權利</h2>
-                <ul>
-                    <li><strong>查閱與刪除</strong>：所有資料皆在你的裝置與 iCloud 上，可直接在 iOS 系統內完整刪除。</li>
-                    <li><strong>撤回授權</strong>：iOS 設定 → 隱私權與安全性 → HealthKit / Shortcuts 可隨時撤回。</li>
-                    <li><strong>關閉分析</strong>：iOS 設定 → 隱私權與安全性 → Analytics 可關閉系統層級資料分享。</li>
-                </ul>
-
-                <h2>8. 聯絡我們</h2>
-                <p>有任何隱私問題請寄信至 <a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a>。</p>
-
-                <h2>9. 變更</h2>
-                <p>本政策若有實質變更，會在 App 內或本網頁公告。持續使用本 App 視為接受新版政策。</p>
+                <h2>12. 聯絡與政策變更</h2>
+                <p>隱私問題請寄至 <a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a>。若本政策有實質變更，我們會更新本頁日期，並在適當時於 App 內說明。</p>
             </div>
 
-            <!-- en -->
             <div data-lang="en" style="display:none;">
-                <p>Per-App Volume Profiles (Home Screen icon labeled <strong>AppVolume</strong>; hereafter "the App") is developed by xup Studio. We designed for privacy from day one. This policy explains what we collect, why, and what choices you have.</p>
+                <p>App Volume is developed by xup Studio. This policy explains how the app and this website process data and the choices available to you.</p>
 
-                <h2>1. TL;DR</h2>
+                <h2>1. Summary</h2>
                 <ul>
-                    <li>Every profile, rule, and HealthKit reading <strong>lives only on your device and in your iCloud private zone</strong>.</li>
-                    <li>We <strong>operate no server</strong> that holds your personal health or behavioral data.</li>
-                    <li>No third-party ad SDKs. No data sale. No cross-app behavioral profiling.</li>
+                    <li>The Modes, app rules, and volume values you create are stored on your device by default.</li>
+                    <li>You may back them up to your own Apple CloudKit private database. This is backup and restore, not live cross-device sync.</li>
+                    <li>We use Google Firebase for anonymous authentication, service protection, remote configuration, Discover content, analytics, crash diagnostics, and feedback you choose to submit.</li>
+                    <li>We do not use data for cross-company or cross-app advertising tracking, sell or rent personal data, or include an advertising SDK.</li>
                 </ul>
 
-                <h2>2. Information We Collect</h2>
+                <h2>2. Data Stored on Your Device</h2>
+                <p>Modes, app rules (including app identifiers and volume values), Global Rules, headphone volume settings, usage statistics, and preferences are primarily stored on-device. Normal use does not upload your Mode names, app names or bundle IDs, or complete rule records to xup Studio. Section 5.2 describes the derived analytics fields that may be sent while analytics is enabled.</p>
 
-                <h3>2.1 Content You Create In-App (On-Device)</h3>
-                <p>Profiles, volume rules, triggers, custom preferences. This data lives only in on-device storage (SwiftData) and your iCloud private CloudKit zone. Our developers cannot read it from a server.</p>
+                <h2>3. Private iCloud Backup</h2>
+                <p>When you back up manually or enable automatic backup, the app writes Modes, rules, and related settings to <strong>your own CloudKit private database</strong>. xup Studio cannot browse the contents of your private database from its developer console. Restore is initiated by you, and this feature does not merge changes across devices in real time.</p>
+                <p>You can turn off automatic backup in App Settings and remove the related data using Apple's iCloud storage management tools.</p>
 
-                <h3>2.2 HealthKit Data (On-Device)</h3>
-                <p>If you authorize it, we read <code>HKQuantityTypeIdentifier.headphoneAudioExposure</code> to render 7-day / 24-hour trends and threshold alerts. Raw HealthKit data <strong>is processed entirely on-device and never leaves your phone</strong>.</p>
+                <h2>4. Discover &amp; Sharing</h2>
+                <h3>4.1 Discover</h3>
+                <p>Discover reads curated Modes maintained by xup Studio from Firebase Firestore. The app may record the curated item's identifier, an install event, app version, and time to understand which public content is useful. Browsing Discover does not upload your private Modes or app list.</p>
 
-                <h3>2.3 Anonymous Analytics (Firebase Analytics)</h3>
-                <p>We log <strong>anonymous feature events</strong> such as: onboarding step completion, widget added, profile creations, paywall views, review prompt shown. These events <strong>do not</strong> include:</p>
+                <h3>4.2 Modes You Choose to Share</h3>
+                <p>When you create a share link, the Mode name and rules needed for import—including app identifiers and volume values—are encoded in the link. Anyone with the link can view and import that content, and the link service and network providers may process ordinary connection metadata. Do not put personal information in a Mode name if you do not want it shared.</p>
+
+                <h2>5. Firebase and Data We Collect</h2>
+                <h3>5.1 Anonymous Authentication, App Check &amp; Required Configuration</h3>
+                <p>At launch, the app uses Firebase Authentication to create or restore an <strong>anonymous user ID (UID)</strong>. It does not contain your name or Apple ID, but it acts as a persistent pseudonymous identifier used to protect Firestore requests, authorize feedback submissions, and—when analytics is enabled—associate product events from the same installation or sign-in state.</p>
+                <p>Firebase App Check (Apple DeviceCheck in production), Firebase Installations, and Remote Config process device or installation identifiers, app and system versions, network requests, and security attestations needed for service operation, compatibility, and integrity checks. Remote Config supplies shortcut template locations, compatibility or update information, and feature configuration.</p>
+
+                <h3>5.2 Usage Analytics (Firebase Analytics)</h3>
+                <p>Usage analytics is on by default. It collects product interactions linked to the anonymous UID or device/installation identifiers, such as onboarding steps, bucketed Mode and rule counts, feature opens, widget or Control Center interactions, backup results, curated Mode installs, and review prompts. Analytics <strong>does not include</strong> Mode names you enter, bundle IDs of apps you add, feedback text, or email.</p>
+                <p>To understand preferred volume ranges, analytics may also send a 0–100% volume percentage, speaker or headphone channel, configuration source, enabled state, and a broad app category such as music, video, social, or gaming. These action events and at-most-daily configuration snapshots contain no app name, bundle ID (including a hash), rule ID, Mode ID, or Mode name.</p>
+
+                <h3>5.3 Crash &amp; Diagnostic Data (Firebase Crashlytics)</h3>
+                <p>Crashlytics is on by default and may collect crash stacks, non-fatal errors, performance and other diagnostic data, device and operating-system information, app version, and non-personal state needed to diagnose a problem (such as a Mode UUID and feature state). It does not intentionally collect Mode names or bundle IDs from your app rules.</p>
+
+                <h3>5.4 Turn Off Analytics &amp; Crash Reports</h3>
+                <p>Go to App Volume → Settings → Advanced and turn off “Share anonymous analytics” to disable collection by both Firebase Analytics and Crashlytics. This setting is on by default.</p>
+                <p>After you turn it off, anonymous Firebase Authentication, App Check, Remote Config, and Firestore requests you initiate through Discover or feedback continue to operate because they provide secure app functionality. Those required services are not disabled by the telemetry switch.</p>
+
+                <h3>5.5 Feedback You Choose to Submit (Firebase Firestore)</h3>
+                <p>Only when you tap Submit do we store:</p>
                 <ul>
-                    <li>The names of profiles you create (user input)</li>
-                    <li>Target app bundle IDs in your rules (could imply usage habits)</li>
-                    <li>Raw HealthKit dB readings</li>
-                    <li>Email or any personally identifying information</li>
+                    <li>Your 1–5 rating, feedback text (up to 200 characters), and submission time;</li>
+                    <li>Your optional email address;</li>
+                    <li>App version and build, iOS / iPadOS version, device model, and locale;</li>
+                    <li>Mode count, current access state, and anonymous Firebase UID.</li>
+                </ul>
+                <p>Feedback does not automatically include Mode names or your app list. If you type personal information into the message, we receive what you type. We use feedback to respond, fix bugs, improve the product, and prevent abuse.</p>
+
+                <h2>6. What We Do Not Do</h2>
+                <ul>
+                    <li>We do not use Apple's advertising identifier (IDFA) for tracking.</li>
+                    <li>We do not combine data with third-party advertising data or build cross-app advertising profiles.</li>
+                    <li>We do not sell or rent personal data.</li>
+                    <li>We do not send your Mode names or app rule list through Analytics or Crashlytics.</li>
                 </ul>
 
-                <h3>2.4 Crash Reports (Firebase Crashlytics)</h3>
-                <p>When the App crashes, we collect an anonymous crash stack along with feature flags (active profile ID as UUID, IAP state as free/pro). This helps us fix bugs and is not used to identify individuals.</p>
-
-                <h3>2.5 Feedback Form (Firebase Firestore)</h3>
-                <p>If you voluntarily submit feedback from Settings, we store: rating, message body, app version, iOS version, device model, locale, active profile count, Pro subscriber status. Email is optional.</p>
-
-                <h2>3. What We Don't Do</h2>
+                <h2>7. Third-Party Services</h2>
                 <ul>
-                    <li>No third-party ad SDKs.</li>
-                    <li>No selling or renting your data to anyone.</li>
-                    <li>No cross-app behavioral profiles.</li>
-                    <li>No uploading of your raw HealthKit readings.</li>
-                    <li>No user-typed strings transmitted in Analytics.</li>
+                    <li><strong>Apple</strong>: iOS / iPadOS, Shortcuts, CloudKit, the App Store, and DeviceCheck, subject to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</li>
+                    <li><strong>Google Firebase</strong>: Analytics, Crashlytics, Authentication, App Check, Installations, Remote Config, Firestore, and Hosting, subject to <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy and security information</a>.</li>
+                </ul>
+                <p>Third parties may process data outside your country or region through their infrastructure.</p>
+
+                <h2>8. Retention &amp; Security</h2>
+                <p>You control on-device data and private iCloud backups. Analytics and diagnostic data are handled according to our Firebase project settings and Google's retention policies. We keep feedback only as long as reasonably needed to respond, diagnose issues, improve the product, prevent abuse, and meet legal obligations. We use platform access controls and anonymous authentication to reduce unauthorized-access risk, but no system can guarantee absolute security.</p>
+
+                <h2>9. Your Choices &amp; Deletion</h2>
+                <ul>
+                    <li>Delete the app to remove local data from the device.</li>
+                    <li>Turn off automatic backup in App Settings and remove private backup data through Apple's iCloud storage management.</li>
+                    <li>Turn off Analytics and Crashlytics in App Settings.</li>
+                    <li>Email is optional in feedback. To ask about or request deletion of identifiable feedback, contact us with the submission date and enough information to identify it.</li>
                 </ul>
 
-                <h2>4. iCloud Sync</h2>
-                <p>Profile backups use Apple's CloudKit private database. Data resides in <strong>your own iCloud account</strong>; xup Studio has no access. To stop syncing, remove "Per-App Volume Profiles" data via iOS Settings → [your name] → iCloud → Manage Storage.</p>
+                <h2>10. Children's Privacy</h2>
+                <p>The app is not specifically directed to children under 13. We do not knowingly ask children for personal information. Contact us if you believe a child submitted personal information.</p>
 
-                <h2>5. Third-Party Services</h2>
-                <ul>
-                    <li><strong>Apple</strong> (iOS, Shortcuts, HealthKit, CloudKit, StoreKit) — covered by Apple's privacy policy.</li>
-                    <li><strong>Google Firebase</strong> (Analytics / Crashlytics / Firestore / App Check / Authentication) — covered by the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a>.</li>
-                </ul>
+                <h2>11. This Website</h2>
+                <p>This is a static website and sets no first-party analytics cookie. The language-switch preference is saved in your browser's localStorage. The site loads Google Fonts and Font Awesome from cdnjs; the web host and those CDNs may receive IP address, browser information, and ordinary server request logs.</p>
 
-                <h2>6. Children's Privacy</h2>
-                <p>The App is not directed at children under 13. We do not knowingly collect personal information from children.</p>
-
-                <h2>7. Your Rights</h2>
-                <ul>
-                    <li><strong>Access &amp; delete</strong>: all your data is on your device and in your iCloud, fully removable from iOS itself.</li>
-                    <li><strong>Revoke permissions</strong>: iOS Settings → Privacy &amp; Security → HealthKit / Shortcuts can be revoked anytime.</li>
-                    <li><strong>Opt out of analytics</strong>: iOS Settings → Privacy &amp; Security → Analytics disables system-level data sharing.</li>
-                </ul>
-
-                <h2>8. Contact</h2>
-                <p>Privacy questions: <a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a>.</p>
-
-                <h2>9. Changes</h2>
-                <p>If we make material changes, we'll notify you in-app or on this page. Continued use of the App constitutes acceptance.</p>
+                <h2>12. Contact &amp; Changes</h2>
+                <p>Privacy questions: <a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a>. If this policy changes materially, we will update the date on this page and provide an in-app explanation when appropriate.</p>
             </div>
         </article>
     </main>
 
     <footer class="footer">
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/app-icon.png" alt="" class="footer-logo">
-                <div>
-                    <strong>Per-App Volume Profiles</strong>
-                    <span data-lang="zh">每個 App，都有它自己的音量。</span>
-                    <span data-lang="en" style="display:none;">Every app, its own volume.</span>
-                </div>
-            </div>
+            <div class="footer-brand"><img src="assets/app-icon.png" alt="" class="footer-logo"><div><strong>App Volume</strong><span data-lang="zh">每個 App，都有它自己的音量。</span><span data-lang="en" style="display:none;">Every app, its own volume.</span></div></div>
             <div class="footer-cols">
-                <div class="footer-col">
-                    <h5 data-lang="zh">產品</h5>
-                    <h5 data-lang="en" style="display:none;">Product</h5>
-                    <a href="index.html#features" data-lang="zh">功能</a>
-                    <a href="index.html#features" data-lang="en" style="display:none;">Features</a>
-                    <a href="index.html#hearing" data-lang="zh">聽力健康</a>
-                    <a href="index.html#hearing" data-lang="en" style="display:none;">Hearing Health</a>
-                </div>
-                <div class="footer-col">
-                    <h5 data-lang="zh">法律</h5>
-                    <h5 data-lang="en" style="display:none;">Legal</h5>
-                    <a href="privacy.html" data-lang="zh">隱私權政策</a>
-                    <a href="privacy.html" data-lang="en" style="display:none;">Privacy Policy</a>
-                    <a href="terms.html" data-lang="zh">使用條款</a>
-                    <a href="terms.html" data-lang="en" style="display:none;">Terms of Use</a>
-                </div>
-                <div class="footer-col">
-                    <h5 data-lang="zh">支援</h5>
-                    <h5 data-lang="en" style="display:none;">Support</h5>
-                    <a href="support.html" data-lang="zh">聯絡支援</a>
-                    <a href="support.html" data-lang="en" style="display:none;">Contact Support</a>
-                </div>
+                <div class="footer-col"><h5 data-lang="zh">產品</h5><h5 data-lang="en" style="display:none;">Product</h5><a href="index.html#features" data-lang="zh">功能</a><a href="index.html#features" data-lang="en" style="display:none;">Features</a><a href="index.html#modes" data-lang="zh">情境模式</a><a href="index.html#modes" data-lang="en" style="display:none;">Modes</a><a href="index.html#headphones" data-lang="zh">耳機音量</a><a href="index.html#headphones" data-lang="en" style="display:none;">Headphones</a></div>
+                <div class="footer-col"><h5 data-lang="zh">法律</h5><h5 data-lang="en" style="display:none;">Legal</h5><a href="privacy.html" data-lang="zh">隱私權政策</a><a href="privacy.html" data-lang="en" style="display:none;">Privacy Policy</a><a href="terms.html" data-lang="zh">使用條款</a><a href="terms.html" data-lang="en" style="display:none;">Terms of Use</a></div>
+                <div class="footer-col"><h5 data-lang="zh">支援</h5><h5 data-lang="en" style="display:none;">Support</h5><a href="support.html" data-lang="zh">聯絡支援</a><a href="support.html" data-lang="en" style="display:none;">Contact Support</a></div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <span>© 2026 xup Studio · Per-App Volume Profiles</span>
-            <span class="footer-badge"><i class="fab fa-apple"></i> Designed for iPhone &amp; iPad</span>
-        </div>
+        <div class="footer-bottom"><span>© 2026 xup Studio · App Volume</span><span class="footer-badge"><i class="fab fa-apple"></i> Designed for iPhone &amp; iPad</span></div>
     </footer>
-
-    <script src="js/i18n.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script><script src="js/main.js"></script>
 </body>
 
 </html>

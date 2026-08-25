@@ -4,174 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Per-App Volume Profiles — 應用音量設定檔</title>
-    <meta name="description"
-        content="Per-App Volume Profiles 為 iPhone 與 iPad 帶來每個 App 獨立音量。Focus Mode、時段、耳機自動切換，搭配 Widget 與 Shortcuts。">
-    <meta name="keywords" content="per-app volume, iOS volume control, app volume, AppVolume, iPhone volume per app, Shortcuts, HealthKit, hearing health">
+    <title>App Volume — 每個 App 都有自己的音量</title>
+    <meta name="description" content="App Volume 為 iPhone 與 iPad 帶來每個 App 的音量規則、情境模式、藍牙耳機音量、Widget 與控制中心切換。需要 iOS 或 iPadOS 18.2 以上版本。">
+    <meta name="keywords" content="App Volume, per-app volume, iOS volume control, iPhone volume per app, Shortcuts, widget, Control Center">
     <meta name="theme-color" content="#0E0F1A">
-
-    <meta property="og:title" content="Per-App Volume Profiles — 每個 App 獨立音量">
-    <meta property="og:description"
-        content="Per-app volume for iPhone and iPad. Automatic when you want, one tap when you don't.">
+    <meta property="og:title" content="App Volume — 每個 App 都有自己的音量">
+    <meta property="og:description" content="Per-app volume modes for iPhone and iPad, powered by Apple Shortcuts.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/app-icon.png">
-
     <link rel="icon" href="assets/app-icon.png" type="image/png">
     <link rel="shortcut icon" href="assets/app-icon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/app-icon.png">
-
     <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="container nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="assets/app-icon.png" alt="Per-App Volume Profiles" class="nav-logo-img">
+                <img src="assets/app-icon.png" alt="App Volume" class="nav-logo-img">
                 <div class="nav-logo-text">
-                    <span class="nav-logo-name">Per-App Volume Profiles</span>
-                    <span class="nav-logo-tag">AppVolume</span>
+                    <span class="nav-logo-name">App Volume</span>
+                    <span class="nav-logo-tag" data-lang="zh">應用音量</span>
+                    <span class="nav-logo-tag" data-lang="en" style="display:none;">A volume per app</span>
                 </div>
             </a>
-
             <div class="nav-links">
-                <a href="#features" data-lang="zh">功能</a>
-                <a href="#features" data-lang="en" style="display:none;">Features</a>
-
-                <a href="#profiles" data-lang="zh">設定檔</a>
-                <a href="#profiles" data-lang="en" style="display:none;">Profiles</a>
-
-                <a href="#hearing" data-lang="zh">聽力健康</a>
-                <a href="#hearing" data-lang="en" style="display:none;">Hearing</a>
-
-                <a href="#faq" data-lang="zh">常見問題</a>
-                <a href="#faq" data-lang="en" style="display:none;">FAQ</a>
+                <a href="#features" data-lang="zh">功能</a><a href="#features" data-lang="en" style="display:none;">Features</a>
+                <a href="#modes" data-lang="zh">情境模式</a><a href="#modes" data-lang="en" style="display:none;">Modes</a>
+                <a href="#headphones" data-lang="zh">耳機音量</a><a href="#headphones" data-lang="en" style="display:none;">Headphones</a>
+                <a href="#faq" data-lang="zh">常見問題</a><a href="#faq" data-lang="en" style="display:none;">FAQ</a>
             </div>
-
             <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-                    <i class="fas fa-globe"></i>
-                    <span class="lang-toggle-text">EN</span>
-                </button>
-                <a href="#download" class="btn btn-download">
-                    <i class="fab fa-apple"></i>
-                    <span data-lang="zh">下載</span>
-                    <span data-lang="en" style="display:none;">Download</span>
-                </a>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language"><i class="fas fa-globe"></i><span class="lang-toggle-text">EN</span></button>
+                <a href="https://apps.apple.com/app/id6773184998" target="_blank" rel="noopener" class="btn btn-download"><i class="fab fa-apple"></i><span data-lang="zh">下載</span><span data-lang="en" style="display:none;">Download</span></a>
+                <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu"><i class="fas fa-bars"></i></button>
             </div>
         </div>
         <div class="mobile-menu" id="mobileMenu">
-            <a href="#features" data-lang="zh">功能</a>
-            <a href="#features" data-lang="en" style="display:none;">Features</a>
-            <a href="#profiles" data-lang="zh">設定檔</a>
-            <a href="#profiles" data-lang="en" style="display:none;">Profiles</a>
-            <a href="#hearing" data-lang="zh">聽力健康</a>
-            <a href="#hearing" data-lang="en" style="display:none;">Hearing</a>
-            <a href="#faq" data-lang="zh">常見問題</a>
-            <a href="#faq" data-lang="en" style="display:none;">FAQ</a>
+            <a href="#features" data-lang="zh">功能</a><a href="#features" data-lang="en" style="display:none;">Features</a>
+            <a href="#modes" data-lang="zh">情境模式</a><a href="#modes" data-lang="en" style="display:none;">Modes</a>
+            <a href="#headphones" data-lang="zh">耳機音量</a><a href="#headphones" data-lang="en" style="display:none;">Headphones</a>
+            <a href="#faq" data-lang="zh">常見問題</a><a href="#faq" data-lang="en" style="display:none;">FAQ</a>
         </div>
     </nav>
 
     <main>
-        <!-- ===== HERO ===== -->
         <section class="hero-section">
             <div class="hero-glow"></div>
             <div class="container hero-content">
                 <div class="hero-text">
-                    <span class="badge-accent" data-lang="zh"><i class="fas fa-bolt"></i> iPhone · iPad · iOS 17+</span>
-                    <span class="badge-accent" data-lang="en" style="display:none;"><i class="fas fa-bolt"></i> iPhone · iPad · iOS 17+</span>
-
+                    <span class="badge-accent" data-lang="zh"><i class="fas fa-bolt"></i> iPhone · iPad · iOS / iPadOS 18.2+</span>
+                    <span class="badge-accent" data-lang="en" style="display:none;"><i class="fas fa-bolt"></i> iPhone · iPad · iOS / iPadOS 18.2+</span>
                     <h1 data-lang="zh">每個 App，<br>都有它自己的音量。</h1>
                     <h1 data-lang="en" style="display:none;">Every app,<br>its own volume.</h1>
-
-                    <p class="hero-sub" data-lang="zh">想自動切換就自動，想一鍵切換就一鍵。<br>把 Android 使用者習以為常的 per-app 音量，用合法路徑帶到 iPhone 與 iPad。</p>
-                    <p class="hero-sub" data-lang="en" style="display:none;">Automatic when you want, one tap when you don't.<br>Bring per-app volume — long taken for granted on Android — to iPhone and iPad, the right way.</p>
-
+                    <p class="hero-sub" data-lang="zh">建立情境模式，替不同 App 設定音量。<br>透過 Apple「捷徑」的一個個人自動化，在你打開 App 時套用。</p>
+                    <p class="hero-sub" data-lang="en" style="display:none;">Build Modes with a volume for each app.<br>One Apple Shortcuts Personal Automation applies them as apps open.</p>
                     <div class="cta-buttons" id="download">
-                        <a href="#notify" class="btn btn-primary">
-                            <i class="fab fa-apple"></i>
-                            <span data-lang="zh">即將登陸 App Store</span>
-                            <span data-lang="en" style="display:none;">Coming Soon to App Store</span>
-                        </a>
-                        <a href="#how-it-works" class="btn btn-outline">
-                            <i class="fas fa-play"></i>
-                            <span data-lang="zh">運作方式</span>
-                            <span data-lang="en" style="display:none;">How it works</span>
-                        </a>
+                        <a href="https://apps.apple.com/app/id6773184998" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-apple"></i><span data-lang="zh">在 App Store 下載</span><span data-lang="en" style="display:none;">Download on the App Store</span></a>
+                        <a href="#how-it-works" class="btn btn-outline"><i class="fas fa-play"></i><span data-lang="zh">運作方式</span><span data-lang="en" style="display:none;">How it works</span></a>
                     </div>
-
-                    <p class="hero-note" data-lang="zh"><i class="fas fa-info-circle"></i> 設定一次，之後 App 自動幫你切。</p>
-                    <p class="hero-note" data-lang="en" style="display:none;"><i class="fas fa-info-circle"></i> Set it once. We switch for you.</p>
+                    <p class="hero-note" data-lang="zh"><i class="fas fa-info-circle"></i> 目前版本完全免費，沒有訂閱。</p>
+                    <p class="hero-note" data-lang="en" style="display:none;"><i class="fas fa-info-circle"></i> The current version is free, with no subscription.</p>
                 </div>
 
-                <!-- ===== DEVICE MOCKUP ===== -->
                 <div class="hero-mockup">
                     <div class="phone-frame">
                         <div class="phone-notch"></div>
                         <div class="phone-screen">
-                            <div class="phone-statusbar">
-                                <span class="phone-time">9:41</span>
-                                <div class="phone-icons">
-                                    <i class="fas fa-signal"></i>
-                                    <i class="fas fa-wifi"></i>
-                                    <i class="fas fa-battery-full"></i>
-                                </div>
-                            </div>
-                            <div class="phone-app-header">
-                                <h3 data-lang="zh">設定檔</h3>
-                                <h3 data-lang="en" style="display:none;">Profiles</h3>
-                                <button class="phone-add-btn"><i class="fas fa-plus"></i></button>
-                            </div>
+                            <div class="phone-statusbar"><span class="phone-time">9:41</span><div class="phone-icons"><i class="fas fa-signal"></i><i class="fas fa-wifi"></i><i class="fas fa-battery-full"></i></div></div>
+                            <div class="phone-app-header"><h3 data-lang="zh">情境模式</h3><h3 data-lang="en" style="display:none;">Modes</h3><button type="button" class="phone-add-btn" aria-label="Add"><i class="fas fa-plus"></i></button></div>
                             <div class="phone-profile-cards">
                                 <div class="profile-card active">
-                                    <div class="profile-icon" style="background:linear-gradient(135deg,#FF6B4A,#FFB347)"><i class="fas fa-moon"></i></div>
-                                    <div class="profile-info">
-                                        <span class="profile-name" data-lang="zh">夜間模式</span>
-                                        <span class="profile-name" data-lang="en" style="display:none;">Night Mode</span>
-                                        <span class="profile-meta" data-lang="zh">娛樂類 30% · 4 個 App</span>
-                                        <span class="profile-meta" data-lang="en" style="display:none;">Entertainment 30% · 4 apps</span>
-                                    </div>
+                                    <div class="profile-icon mode-night-icon"><i class="fas fa-moon"></i></div>
+                                    <div class="profile-info"><span class="profile-name" data-lang="zh">夜間模式</span><span class="profile-name" data-lang="en" style="display:none;">Night Mode</span><span class="profile-meta" data-lang="zh">3 個 App · 15%</span><span class="profile-meta" data-lang="en" style="display:none;">3 apps · 15%</span></div>
                                     <i class="fas fa-check-circle profile-active-icon"></i>
                                 </div>
                                 <div class="profile-card">
-                                    <div class="profile-icon" style="background:linear-gradient(135deg,#60A5FA,#A78BFA)"><i class="fas fa-briefcase"></i></div>
-                                    <div class="profile-info">
-                                        <span class="profile-name" data-lang="zh">專注工作</span>
-                                        <span class="profile-name" data-lang="en" style="display:none;">Focus Work</span>
-                                        <span class="profile-meta" data-lang="zh">娛樂 0% · 工作 100%</span>
-                                        <span class="profile-meta" data-lang="en" style="display:none;">Entertainment 0% · Work 100%</span>
-                                    </div>
+                                    <div class="profile-icon mode-public-icon"><i class="fas fa-users"></i></div>
+                                    <div class="profile-info"><span class="profile-name" data-lang="zh">公眾場合</span><span class="profile-name" data-lang="en" style="display:none;">Public Space</span><span class="profile-meta" data-lang="zh">3 個 App · 35%</span><span class="profile-meta" data-lang="en" style="display:none;">3 apps · 35%</span></div>
                                 </div>
                                 <div class="profile-card">
-                                    <div class="profile-icon" style="background:linear-gradient(135deg,#34D399,#60A5FA)"><i class="fas fa-dumbbell"></i></div>
-                                    <div class="profile-info">
-                                        <span class="profile-name" data-lang="zh">健身</span>
-                                        <span class="profile-name" data-lang="en" style="display:none;">Workout</span>
-                                        <span class="profile-meta" data-lang="zh">音樂 80% · 通訊 60%</span>
-                                        <span class="profile-meta" data-lang="en" style="display:none;">Music 80% · Calls 60%</span>
-                                    </div>
+                                    <div class="profile-icon mode-gaming-icon"><i class="fas fa-gamepad"></i></div>
+                                    <div class="profile-info"><span class="profile-name" data-lang="zh">遊戲</span><span class="profile-name" data-lang="en" style="display:none;">Gaming</span><span class="profile-meta" data-lang="zh">5 個 App · 15%</span><span class="profile-meta" data-lang="en" style="display:none;">5 apps · 15%</span></div>
                                 </div>
                                 <div class="profile-card">
-                                    <div class="profile-icon" style="background:linear-gradient(135deg,#F472B6,#FB7185)"><i class="fas fa-users"></i></div>
-                                    <div class="profile-info">
-                                        <span class="profile-name" data-lang="zh">公眾場合</span>
-                                        <span class="profile-name" data-lang="en" style="display:none;">Public Space</span>
-                                        <span class="profile-meta" data-lang="zh">全部 40% · 通知靜音</span>
-                                        <span class="profile-meta" data-lang="en" style="display:none;">All 40% · Mute alerts</span>
-                                    </div>
+                                    <div class="profile-icon mode-social-icon"><i class="fas fa-volume-low"></i></div>
+                                    <div class="profile-info"><span class="profile-name" data-lang="zh">社群靜音</span><span class="profile-name" data-lang="en" style="display:none;">Social Quiet</span><span class="profile-meta" data-lang="zh">社群 App · 25%</span><span class="profile-meta" data-lang="en" style="display:none;">Social apps · 25%</span></div>
                                 </div>
                             </div>
                         </div>
@@ -180,406 +103,137 @@
             </div>
         </section>
 
-        <!-- ===== TRUST BAR ===== -->
         <div class="trust-bar">
             <div class="container trust-grid">
-                <div class="trust-item">
-                    <i class="fab fa-apple"></i>
-                    <div>
-                        <strong data-lang="zh">iPhone &amp; iPad</strong>
-                        <strong data-lang="en" style="display:none;">iPhone &amp; iPad</strong>
-                        <span data-lang="zh">為兩個尺寸量身設計</span>
-                        <span data-lang="en" style="display:none;">Designed for both</span>
-                    </div>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-user-shield"></i>
-                    <div>
-                        <strong data-lang="zh">隱私為先</strong>
-                        <strong data-lang="en" style="display:none;">Privacy First</strong>
-                        <span data-lang="zh">資料只留在你的裝置</span>
-                        <span data-lang="en" style="display:none;">Your data stays yours</span>
-                    </div>
-                </div>
-                <div class="trust-item">
-                    <i class="fas fa-bolt"></i>
-                    <div>
-                        <strong data-lang="zh">自動切換</strong>
-                        <strong data-lang="en" style="display:none;">Auto-Switch</strong>
-                        <span data-lang="zh">依場景自動套用</span>
-                        <span data-lang="en" style="display:none;">By context, automatically</span>
-                    </div>
-                </div>
+                <div class="trust-item"><i class="fab fa-apple"></i><div><strong>iPhone &amp; iPad</strong><span data-lang="zh">iOS / iPadOS 18.2 以上</span><span data-lang="en" style="display:none;">Requires iOS / iPadOS 18.2+</span></div></div>
+                <div class="trust-item"><i class="fas fa-user-shield"></i><div><strong data-lang="zh">隱私優先</strong><strong data-lang="en" style="display:none;">Privacy First</strong><span data-lang="zh">規則保留在裝置與私人備份</span><span data-lang="en" style="display:none;">Rules stay on-device and in private backup</span></div></div>
+                <div class="trust-item"><i class="fas fa-bolt"></i><div><strong data-lang="zh">一個 App 自動化</strong><strong data-lang="en" style="display:none;">One App Automation</strong><span data-lang="zh">一次勾選所有要控制的 App</span><span data-lang="en" style="display:none;">Select all controlled apps once</span></div></div>
             </div>
         </div>
 
-        <!-- ===== FEATURES GRID ===== -->
         <section id="features" class="features-section">
             <div class="container">
                 <span class="subtitle">FEATURES</span>
-                <h2 data-lang="zh">為 iOS 量身打造的音量管理</h2>
-                <h2 data-lang="en" style="display:none;">Volume management, made for iOS</h2>
-                <p class="section-lead" data-lang="zh">六項核心功能讓你不再被 TikTok 嚇到、不再吵到家人、不再傷耳朵。</p>
-                <p class="section-lead" data-lang="en" style="display:none;">Six core capabilities so TikTok never surprises you, family never gets disturbed, and your ears stay protected.</p>
-
+                <h2 data-lang="zh">為 iOS 打造的音量管理</h2><h2 data-lang="en" style="display:none;">Volume management built for iOS</h2>
+                <p class="section-lead" data-lang="zh">用 Apple 官方的「捷徑」路徑，讓常打開的 App 回到你指定的音量。</p>
+                <p class="section-lead" data-lang="en" style="display:none;">Use Apple's official Shortcuts path to return the apps you open to the volume you chose.</p>
                 <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="icon-wrapper"><i class="fas fa-sliders-h"></i></div>
-                        <h3 data-lang="zh">每個 App 獨立音量規則</h3>
-                        <h3 data-lang="en" style="display:none;">Per-App Volume Rules</h3>
-                        <p data-lang="zh">一條規則 = (App, 音量%, 觸發條件)。打開 TikTok 自動 40%、打開 Spotify 自動 80%，App 之間切換不再被嚇到。</p>
-                        <p data-lang="en" style="display:none;">One rule = (App, volume %, trigger). Opening TikTok auto-sets 40%, opening Spotify auto-sets 80%. No more startling jumps between apps.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="icon-wrapper"><i class="fas fa-layer-group"></i></div>
-                        <h3 data-lang="zh">設定檔組合</h3>
-                        <h3 data-lang="en" style="display:none;">Profile Bundles</h3>
-                        <p data-lang="zh">把多條規則打包成一個情境設定檔。內建 5 組情境：夜間模式、公眾場合、健身、專注工作、遊戲時間。</p>
-                        <p data-lang="en" style="display:none;">Bundle multiple rules into a single contextual profile. 5 built-in packs: Night Mode, Public Space, Workout, Focus Work, Game Time.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="icon-wrapper"><i class="fas fa-magic"></i></div>
-                        <h3 data-lang="zh">智慧觸發</h3>
-                        <h3 data-lang="en" style="display:none;">Smart Triggers</h3>
-                        <p data-lang="zh">依專注模式、時段、戴上耳機自動換檔。你想要的場景，它都認得。</p>
-                        <p data-lang="en" style="display:none;">Switches by Focus, time of day, or plugging in headphones. It knows the moment.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="icon-wrapper"><i class="fas fa-th-large"></i></div>
-                        <h3 data-lang="zh">隨手就能切換</h3>
-                        <h3 data-lang="en" style="display:none;">Switch From Anywhere</h3>
-                        <p data-lang="zh">主畫面、鎖定畫面、控制中心都能一鍵換設定檔。需要時就在那。</p>
-                        <p data-lang="en" style="display:none;">One-tap profile switching from Home Screen, Lock Screen, and Control Center. Right where you need it.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="icon-wrapper"><i class="fas fa-heart-pulse"></i></div>
-                        <h3 data-lang="zh">聽力健康整合</h3>
-                        <h3 data-lang="en" style="display:none;">Hearing Health</h3>
-                        <p data-lang="zh">音量暴露累計過高時，主動建議降低音量設定檔。耳朵會謝謝你。</p>
-                        <p data-lang="en" style="display:none;">When cumulative exposure runs high, we suggest a quieter profile. Your ears will thank you.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="icon-wrapper"><i class="fas fa-cloud"></i></div>
-                        <h3 data-lang="zh">iCloud 同步 &amp; 分享</h3>
-                        <h3 data-lang="en" style="display:none;">iCloud Sync &amp; Share</h3>
-                        <p data-lang="zh">設定檔自動跨裝置同步，一鍵分享給家人。</p>
-                        <p data-lang="en" style="display:none;">Profiles sync across your devices. Share with family in one tap.</p>
-                    </div>
+                    <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-sliders-h"></i></div><h3 data-lang="zh">每個 App 的音量規則</h3><h3 data-lang="en" style="display:none;">A Volume Rule for Each App</h3><p data-lang="zh">在情境模式中加入 App，設定 0–100% 的媒體音量。App 打開時，自動化會套用目前模式的規則。</p><p data-lang="en" style="display:none;">Add apps to a Mode and choose a 0–100% media volume. When an app opens, the automation applies the active Mode's rule.</p></div>
+                    <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-layer-group"></i></div><h3 data-lang="zh">情境模式</h3><h3 data-lang="en" style="display:none;">Modes</h3><p data-lang="zh">為夜間、公共場所、遊戲或社群 App 準備不同組合。切換模式，不必重建自動化。</p><p data-lang="en" style="display:none;">Keep different sets for night, public spaces, games, or social apps. Switch Modes without rebuilding the automation.</p></div>
+                    <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-headphones"></i></div><h3 data-lang="zh">藍牙耳機獨立音量</h3><h3 data-lang="en" style="display:none;">Separate Bluetooth Headphone Volume</h3><p data-lang="zh">為個別 App 設定耳機音量。兩個 helper 自動化在藍牙耳機連線與中斷時切換輸出狀態。</p><p data-lang="en" style="display:none;">Choose a headphone volume per app. Two helper automations switch output state when selected Bluetooth headphones connect and disconnect.</p></div>
+                    <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-th-large"></i></div><h3 data-lang="zh">Widget 與控制中心</h3><h3 data-lang="en" style="display:none;">Widgets &amp; Control Center</h3><p data-lang="zh">從主畫面、鎖定畫面 Widget 或控制中心切換下一個情境模式，不必先打開 App。</p><p data-lang="en" style="display:none;">Switch to the next Mode from Home Screen and Lock Screen widgets or Control Center, without opening the app first.</p></div>
+                    <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-globe"></i></div><h3 data-lang="zh">全域規則、探索與分享</h3><h3 data-lang="en" style="display:none;">Global Rules, Discover &amp; Share</h3><p data-lang="zh">全域規則可套用到所有模式；也能從「探索」加入精選模式，或用連結分享自己的模式。</p><p data-lang="en" style="display:none;">Global Rules apply across Modes. Install curated Modes from Discover or share one of your own with a link.</p></div>
+                    <div class="feature-card"><div class="icon-wrapper"><i class="fas fa-cloud-arrow-up"></i></div><h3 data-lang="zh">iCloud 私人備份</h3><h3 data-lang="en" style="display:none;">Private iCloud Backup</h3><p data-lang="zh">手動備份、還原，或開啟自動備份。資料存放在你自己的 CloudKit 私人資料庫，不是即時跨裝置同步。</p><p data-lang="en" style="display:none;">Back up, restore, or enable automatic backup. Data stays in your private CloudKit database; this is not live cross-device sync.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== HOW IT WORKS ===== -->
         <section id="how-it-works" class="howto-section">
             <div class="container">
                 <span class="subtitle">HOW IT WORKS</span>
-                <h2 data-lang="zh">三步驟，把音量交還給你</h2>
-                <h2 data-lang="en" style="display:none;">Three steps to take volume back</h2>
-
+                <h2 data-lang="zh">三步驟開始使用</h2><h2 data-lang="en" style="display:none;">Get started in three steps</h2>
                 <div class="howto-grid">
-                    <div class="howto-step">
-                        <div class="step-num">1</div>
-                        <h3 data-lang="zh">建立設定檔</h3>
-                        <h3 data-lang="en" style="display:none;">Create a Profile</h3>
-                        <p data-lang="zh">在 App 內選擇情境（夜間、健身、工作⋯），加入要管的 App 與對應音量。可從 5 組內建範本一鍵套用。</p>
-                        <p data-lang="en" style="display:none;">Pick a context (Night, Workout, Focus…), add the apps you want to control and target volumes. Or tap one of 5 built-in templates.</p>
-                    </div>
-
-                    <div class="howto-step">
-                        <div class="step-num">2</div>
-                        <h3 data-lang="zh">跟著精靈設定一次</h3>
-                        <h3 data-lang="en" style="display:none;">Follow the Setup Wizard</h3>
-                        <p data-lang="zh">App 一步步帶你做完，三分鐘搞定。之後不用再碰。</p>
-                        <p data-lang="en" style="display:none;">The app walks you through it in three minutes. After that, you're done.</p>
-                    </div>
-
-                    <div class="howto-step">
-                        <div class="step-num">3</div>
-                        <h3 data-lang="zh">用 Widget 切換</h3>
-                        <h3 data-lang="en" style="display:none;">Switch via Widget</h3>
-                        <p data-lang="zh">主畫面、鎖定畫面、控制中心，一鍵就能換場景。</p>
-                        <p data-lang="en" style="display:none;">Home Screen, Lock Screen, or Control Center — one tap and you're in the next scene.</p>
-                    </div>
+                    <div class="howto-step"><div class="step-num">1</div><h3 data-lang="zh">選擇情境模式與 App</h3><h3 data-lang="en" style="display:none;">Choose a Mode and Apps</h3><p data-lang="zh">使用內建模式或建立自己的模式，再替各 App 設定媒體音量。</p><p data-lang="en" style="display:none;">Start with a built-in Mode or create your own, then set a media volume for each app.</p></div>
+                    <div class="howto-step"><div class="step-num">2</div><h3 data-lang="zh">建立一個 App 自動化</h3><h3 data-lang="en" style="display:none;">Create One App Automation</h3><p data-lang="zh">安裝一次 Per-App Volume 範本，在「捷徑」的個人自動化中一次勾選所有 App，並選擇「立即執行」。</p><p data-lang="en" style="display:none;">Install the Per-App Volume template once, select all apps in one Shortcuts Personal Automation, and choose Run Immediately.</p></div>
+                    <div class="howto-step"><div class="step-num">3</div><h3 data-lang="zh">切換模式，繼續沿用</h3><h3 data-lang="en" style="display:none;">Switch Modes and Keep Going</h3><p data-lang="zh">App、Widget 與控制中心都能切換模式。之後新增 App 時，只要把它勾進原本的自動化。</p><p data-lang="en" style="display:none;">Switch Modes in the app, widgets, or Control Center. When you add an app later, tick it in the same automation.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== DEFAULT PROFILES ===== -->
-        <section id="profiles" class="profiles-section">
+        <section id="modes" class="profiles-section">
             <div class="container">
-                <span class="subtitle">BUILT-IN PROFILES</span>
-                <h2 data-lang="zh">5 組情境，立即可用</h2>
-                <h2 data-lang="en" style="display:none;">5 Contexts, ready to go</h2>
-                <p class="section-lead" data-lang="zh">不知從何開始？直接套用我們替你設計好的範本，再依需求微調。</p>
-                <p class="section-lead" data-lang="en" style="display:none;">Not sure where to start? Apply a designed template, then tweak to taste.</p>
-
+                <span class="subtitle">BUILT-IN MODES</span>
+                <h2 data-lang="zh">五種內建狀態，依需求調整</h2><h2 data-lang="en" style="display:none;">Five built-in states, ready to edit</h2>
+                <p class="section-lead" data-lang="zh">首次開啟即可從「無」、夜間模式、公眾場合、遊戲與社群靜音開始；所有內容都能修改或刪除。</p>
+                <p class="section-lead" data-lang="en" style="display:none;">Start with None, Night Mode, Public Space, Gaming, and Social Quiet. Every built-in item can be edited or deleted.</p>
                 <div class="profile-pack-grid">
-                    <div class="profile-pack" style="--pack-gradient:linear-gradient(135deg,#FF6B4A,#FFB347)">
-                        <i class="fas fa-moon"></i>
-                        <h4 data-lang="zh">夜間模式</h4>
-                        <h4 data-lang="en" style="display:none;">Night Mode</h4>
-                        <p data-lang="zh">娛樂類 App 全部 30%，半夜打開 Spotify 不再驚擾全家。</p>
-                        <p data-lang="en" style="display:none;">All entertainment apps at 30%. Late-night Spotify never wakes the household again.</p>
-                    </div>
-
-                    <div class="profile-pack" style="--pack-gradient:linear-gradient(135deg,#F472B6,#FB7185)">
-                        <i class="fas fa-users"></i>
-                        <h4 data-lang="zh">公眾場合</h4>
-                        <h4 data-lang="en" style="display:none;">Public Space</h4>
-                        <p data-lang="zh">全 App 40% + 通知靜音，咖啡廳、捷運、會議室通用。</p>
-                        <p data-lang="en" style="display:none;">All apps 40% + alert mute. Works for cafés, transit, and meeting rooms.</p>
-                    </div>
-
-                    <div class="profile-pack" style="--pack-gradient:linear-gradient(135deg,#34D399,#60A5FA)">
-                        <i class="fas fa-dumbbell"></i>
-                        <h4 data-lang="zh">健身</h4>
-                        <h4 data-lang="en" style="display:none;">Workout</h4>
-                        <p data-lang="zh">音樂 80% 沖到耳，通訊類 60% 不漏接電話。</p>
-                        <p data-lang="en" style="display:none;">Music 80% to fuel the session; calls at 60% so you never miss one.</p>
-                    </div>
-
-                    <div class="profile-pack" style="--pack-gradient:linear-gradient(135deg,#60A5FA,#A78BFA)">
-                        <i class="fas fa-briefcase"></i>
-                        <h4 data-lang="zh">專注工作</h4>
-                        <h4 data-lang="en" style="display:none;">Focus Work</h4>
-                        <p data-lang="zh">娛樂類靜音、工作工具維持原音量。Focus Mode 一切自動。</p>
-                        <p data-lang="en" style="display:none;">Mute entertainment, keep work tools at full volume. Auto-engages with Focus Mode.</p>
-                    </div>
-
-                    <div class="profile-pack" style="--pack-gradient:linear-gradient(135deg,#A78BFA,#EC4899)">
-                        <i class="fas fa-gamepad"></i>
-                        <h4 data-lang="zh">遊戲時間</h4>
-                        <h4 data-lang="en" style="display:none;">Game Time</h4>
-                        <p data-lang="zh">遊戲 60% 帶來沉浸感，通知 100% 確保不錯過重要訊息。</p>
-                        <p data-lang="en" style="display:none;">Games at 60% for immersion, alerts at 100% so nothing important slips by.</p>
-                    </div>
-
-                    <div class="profile-pack profile-pack-custom">
-                        <i class="fas fa-plus"></i>
-                        <h4 data-lang="zh">自訂設定檔</h4>
-                        <h4 data-lang="en" style="display:none;">Custom Profile</h4>
-                        <p data-lang="zh">免費版可建立 1 個自訂設定檔，Pro 解鎖無限設定檔 + 進階觸發。</p>
-                        <p data-lang="en" style="display:none;">Free gets 1 custom profile. Pro unlocks unlimited profiles + advanced triggers.</p>
-                    </div>
+                    <div class="profile-pack mode-none-pack"><i class="fas fa-ban"></i><h4 data-lang="zh">無</h4><h4 data-lang="en" style="display:none;">None</h4><p data-lang="zh">不套用任何 App 規則，讓目前音量維持原狀。</p><p data-lang="en" style="display:none;">Applies no app rules, leaving the current volume unchanged.</p></div>
+                    <div class="profile-pack mode-night-pack"><i class="fas fa-moon"></i><h4 data-lang="zh">夜間模式</h4><h4 data-lang="en" style="display:none;">Night Mode</h4><p data-lang="zh">Instagram、YouTube 與 TikTok 預設為 15%。</p><p data-lang="en" style="display:none;">Starts Instagram, YouTube, and TikTok at 15%.</p></div>
+                    <div class="profile-pack mode-public-pack"><i class="fas fa-users"></i><h4 data-lang="zh">公眾場合</h4><h4 data-lang="en" style="display:none;">Public Space</h4><p data-lang="zh">同一組娛樂 App 預設為 35%，適合外出時使用。</p><p data-lang="en" style="display:none;">Starts the same entertainment apps at 35% for use away from home.</p></div>
+                    <div class="profile-pack mode-gaming-pack"><i class="fas fa-gamepad"></i><h4 data-lang="zh">遊戲</h4><h4 data-lang="en" style="display:none;">Gaming</h4><p data-lang="zh">常見遊戲預設為 15%，降低突然出現的遊戲與廣告音量。</p><p data-lang="en" style="display:none;">Starts common games at 15% to reduce sudden game and ad volume.</p></div>
+                    <div class="profile-pack mode-social-pack"><i class="fas fa-volume-low"></i><h4 data-lang="zh">社群靜音</h4><h4 data-lang="en" style="display:none;">Social Quiet</h4><p data-lang="zh">常見社群與短影音 App 預設為 25%。</p><p data-lang="en" style="display:none;">Starts common social and short-video apps at 25%.</p></div>
+                    <div class="profile-pack profile-pack-custom"><i class="fas fa-plus"></i><h4 data-lang="zh">自訂情境模式</h4><h4 data-lang="en" style="display:none;">Custom Mode</h4><p data-lang="zh">依自己的 App 與使用情境建立更多模式。目前版本完全免費。</p><p data-lang="en" style="display:none;">Create more Modes around your apps and routines. The current version is free.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== HEARING HEALTH ===== -->
-        <section id="hearing" class="hearing-section">
+        <section id="headphones" class="hearing-section">
             <div class="container">
                 <div class="hearing-grid">
                     <div class="hearing-text">
-                        <span class="badge-accent badge-warning"><i class="fas fa-heart-pulse"></i>
-                            <span data-lang="zh">HEALTHKIT 整合</span>
-                            <span data-lang="en" style="display:none;">HEALTHKIT INTEGRATION</span>
-                        </span>
-                        <h2 data-lang="zh">幫你顧到耳朵<br>不只是 App 音量。</h2>
-                        <h2 data-lang="en" style="display:none;">Protecting your hearing,<br>not just your apps.</h2>
-                        <p data-lang="zh">透過 HealthKit 讀取 AirPods 與其他相容耳機的音量暴露，把 WHO 安全聆聽門檻（80 / 85 / 90 dB）直接接到設定檔系統。</p>
-                        <p data-lang="en" style="display:none;">Reads headphone exposure from AirPods and compatible headphones via HealthKit, mapping WHO safe-listening thresholds (80 / 85 / 90 dB) straight into your profile system.</p>
-
+                        <span class="badge-accent badge-warning"><i class="fab fa-bluetooth-b"></i><span data-lang="zh">僅支援藍牙耳機</span><span data-lang="en" style="display:none;">BLUETOOTH HEADPHONES ONLY</span></span>
+                        <h2 data-lang="zh">喇叭與耳機，<br>可以用不同音量。</h2><h2 data-lang="en" style="display:none;">Different volumes<br>for speaker and headphones.</h2>
+                        <p data-lang="zh">iOS 不會直接把目前音訊輸出告訴 App，因此 App Volume 使用兩個小型捷徑與你建立的藍牙個人自動化，記住耳機連線狀態。</p>
+                        <p data-lang="en" style="display:none;">iOS does not directly tell apps the current audio output, so App Volume uses two small shortcuts and Bluetooth Personal Automations you create to remember headphone state.</p>
                         <ul class="check-list">
-                            <li><i class="fas fa-check"></i> <span data-lang="zh">7 天 / 24 小時音量暴露趨勢圖表</span><span data-lang="en" style="display:none;">7-day and 24-hour exposure trend charts</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="zh">門檻可自訂：80（保守） / 85（WHO 標準） / 90（寬鬆）dB</span><span data-lang="en" style="display:none;">Customizable thresholds: 80 (conservative) / 85 (WHO standard) / 90 (lenient) dB</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="zh">過量時無聲提示，建議套用降低音量設定檔</span><span data-lang="en" style="display:none;">Silent prompt when exceeded — suggests a lower-volume profile</span></li>
-                            <li><i class="fas fa-check"></i> <span data-lang="zh">HealthKit 資料一律本機處理，不上傳任何伺服器</span><span data-lang="en" style="display:none;">All HealthKit data stays on-device — never uploaded</span></li>
+                            <li><i class="fas fa-check"></i><span data-lang="zh">安裝「連線」與「中斷」兩個 helper 捷徑</span><span data-lang="en" style="display:none;">Install the Connect and Disconnect helper shortcuts</span></li>
+                            <li><i class="fas fa-check"></i><span data-lang="zh">各建立一條藍牙個人自動化，並選擇你的耳機</span><span data-lang="en" style="display:none;">Create one Bluetooth Personal Automation for each helper and select your headphones</span></li>
+                            <li><i class="fas fa-check"></i><span data-lang="zh">在模式中開啟耳機獨立音量，並調整所需 App</span><span data-lang="en" style="display:none;">Enable separate headphone volume in a Mode and adjust the apps you need</span></li>
+                            <li><i class="fas fa-xmark"></i><span data-lang="zh">不支援有線耳機；目前流程只能使用 Apple 提供的藍牙自動化觸發</span><span data-lang="en" style="display:none;">Wired headphones are not supported; this setup depends on Apple's Bluetooth automation trigger</span></li>
                         </ul>
                     </div>
-
                     <div class="hearing-visual">
-                        <div class="db-meter">
-                            <div class="db-meter-bg">
-                                <div class="db-zones">
-                                    <div class="db-zone db-zone-safe"></div>
-                                    <div class="db-zone db-zone-warn"></div>
-                                    <div class="db-zone db-zone-danger"></div>
-                                </div>
-                                <div class="db-needle" style="--needle-angle:118deg;"></div>
-                                <div class="db-center">
-                                    <span class="db-value">87</span>
-                                    <span class="db-unit">dB</span>
-                                </div>
-                            </div>
-                            <div class="db-labels">
-                                <span>50</span><span>70</span><span>85</span><span>100</span><span>120</span>
-                            </div>
-                            <p class="db-caption" data-lang="zh">過去 7 天平均耳機音量暴露 · 已接近 WHO 警戒門檻</p>
-                            <p class="db-caption" data-lang="en" style="display:none;">7-day average headphone exposure · Approaching WHO threshold</p>
+                        <div class="helper-flow">
+                            <div class="helper-card"><span class="helper-icon"><i class="fas fa-headphones"></i></span><div><strong data-lang="zh">耳機已連線</strong><strong data-lang="en" style="display:none;">Headphones Connected</strong><span data-lang="zh">執行 Connect helper</span><span data-lang="en" style="display:none;">Run the Connect helper</span></div></div>
+                            <div class="helper-arrow"><i class="fas fa-arrow-down"></i></div>
+                            <div class="helper-card active"><span class="helper-icon"><i class="fas fa-volume-low"></i></span><div><strong data-lang="zh">套用耳機音量</strong><strong data-lang="en" style="display:none;">Apply Headphone Volume</strong><span data-lang="zh">依目前情境模式與 App 規則</span><span data-lang="en" style="display:none;">From the active Mode and app rule</span></div></div>
+                            <div class="helper-arrow"><i class="fas fa-arrow-down"></i></div>
+                            <div class="helper-card"><span class="helper-icon"><i class="fas fa-mobile-screen"></i></span><div><strong data-lang="zh">耳機已中斷</strong><strong data-lang="en" style="display:none;">Headphones Disconnected</strong><span data-lang="zh">執行 Disconnect helper，恢復喇叭規則</span><span data-lang="en" style="display:none;">Run the Disconnect helper to restore speaker rules</span></div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== PRIVACY ===== -->
         <section id="privacy" class="privacy-section">
-            <div class="container">
-                <div class="privacy-content">
-                    <span class="subtitle">PRIVACY</span>
-                    <h2 data-lang="zh">你的資料，留在你的裝置</h2>
-                    <h2 data-lang="en" style="display:none;">Your data stays on your device</h2>
-                    <p class="section-lead" data-lang="zh">Per-App Volume Profiles 從第一天就為隱私而設計。我們做的事很少 — 而那正是重點。</p>
-                    <p class="section-lead" data-lang="en" style="display:none;">Per-App Volume Profiles is privacy-first by design. We do very little — and that's the point.</p>
-
-                    <div class="privacy-grid">
-                        <div class="privacy-card">
-                            <i class="fas fa-microchip"></i>
-                            <h4 data-lang="zh">資料只在你的裝置</h4>
-                            <h4 data-lang="en" style="display:none;">Stays on Your Device</h4>
-                            <p data-lang="zh">所有設定檔與聽力數據都不上傳，我們也讀不到。</p>
-                            <p data-lang="en" style="display:none;">Profiles and hearing data never leave your phone. We can't see them.</p>
-                        </div>
-
-                        <div class="privacy-card">
-                            <i class="fas fa-eye-slash"></i>
-                            <h4 data-lang="zh">不追蹤、不販售</h4>
-                            <h4 data-lang="en" style="display:none;">No Tracking, No Selling</h4>
-                            <p data-lang="zh">不接廣告 SDK、不賣資料、不建立使用畫像。</p>
-                            <p data-lang="en" style="display:none;">No ad SDKs. No data selling. No behavioral profiles.</p>
-                        </div>
-
-                        <div class="privacy-card">
-                            <i class="fas fa-fingerprint"></i>
-                            <h4 data-lang="zh">分享也匿名</h4>
-                            <h4 data-lang="en" style="display:none;">Anonymous Sharing</h4>
-                            <p data-lang="zh">分享設定檔時只傳音量規則，不含任何個資。</p>
-                            <p data-lang="en" style="display:none;">Sharing a profile sends only the volume rules — nothing personal.</p>
-                        </div>
-                    </div>
+            <div class="container"><div class="privacy-content">
+                <span class="subtitle">PRIVACY</span>
+                <h2 data-lang="zh">你的模式與規則，由你掌握</h2><h2 data-lang="en" style="display:none;">Your Modes and rules stay under your control</h2>
+                <p class="section-lead" data-lang="zh">模式與規則保存在裝置；可選擇備份到自己的 iCloud 私人資料庫。我們使用 Firebase 維護可靠性與接收你主動送出的回饋，但不做廣告追蹤，也不販售資料。</p>
+                <p class="section-lead" data-lang="en" style="display:none;">Modes and rules stay on-device, with optional backup to your private iCloud database. We use Firebase for reliability and feedback you choose to submit, but never for advertising or data sales.</p>
+                <div class="privacy-grid">
+                    <div class="privacy-card"><i class="fas fa-mobile-screen"></i><h4 data-lang="zh">裝置與私人 iCloud</h4><h4 data-lang="en" style="display:none;">Device &amp; Private iCloud</h4><p data-lang="zh">模式名稱、App 名稱／bundle ID 與完整規則保存在裝置；備份存入你的 CloudKit 私人資料庫。</p><p data-lang="en" style="display:none;">Mode names, app names or bundle IDs, and complete rules stay on-device; backups go to your private CloudKit database.</p></div>
+                    <div class="privacy-card"><i class="fas fa-chart-simple"></i><h4 data-lang="zh">可關閉的分析與當機回報</h4><h4 data-lang="en" style="display:none;">Optional Analytics &amp; Crash Reports</h4><p data-lang="zh">可在 App 設定中關閉；分析可能包含音量百分比、聲道與粗略 App 類別，但不包含模式名稱或特定 App。</p><p data-lang="en" style="display:none;">Disable them in App Settings. Analytics may include volume percentages, channels, and broad app categories, but no Mode name or specific app.</p></div>
+                    <div class="privacy-card"><i class="fas fa-eye-slash"></i><h4 data-lang="zh">不做廣告追蹤、不販售</h4><h4 data-lang="en" style="display:none;">No Ad Tracking or Data Sales</h4><p data-lang="zh">我們不使用廣告 SDK、不建立跨 App 行為檔案，也不出售或出租個人資料。</p><p data-lang="en" style="display:none;">We use no advertising SDK, build no cross-app behavioral profile, and never sell or rent personal data.</p></div>
                 </div>
-            </div>
+                <p class="hero-note"><i class="fas fa-circle-info"></i><span data-lang="zh">分享模式會把模式名稱與匯入所需規則放進你主動分享的連結；取得連結的人可以查看與匯入。</span><span data-lang="en" style="display:none;">A Mode share link contains the Mode name and rules needed for import; anyone with the link can view and import it.</span></p>
+            </div></div>
         </section>
 
-        <!-- ===== FAQ ===== -->
         <section id="faq" class="faq-section">
             <div class="container">
-                <span class="subtitle">FAQ</span>
-                <h2 data-lang="zh">常見問題</h2>
-                <h2 data-lang="en" style="display:none;">Frequently Asked Questions</h2>
-
+                <span class="subtitle">FAQ</span><h2 data-lang="zh">常見問題</h2><h2 data-lang="en" style="display:none;">Frequently Asked Questions</h2>
                 <div class="faq-list">
-                    <details class="faq-item">
-                        <summary>
-                            <span data-lang="zh">iOS 真的能做 per-app 音量？</span>
-                            <span data-lang="en" style="display:none;">Can iOS really do per-app volume?</span>
-                            <i class="fas fa-plus"></i>
-                        </summary>
-                        <p data-lang="zh">可以，而且完全合法。App 用 iOS 內建的自動化機制，幫你在開啟特定 App 時自動套用對應音量。不需要越獄，也不會碰到系統的東西。</p>
-                        <p data-lang="en" style="display:none;">Yes, and completely legitimately. The app uses iOS's built-in automation to apply the matching volume when you open a specific app. No jailbreak, no system tampering.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>
-                            <span data-lang="zh">支援 Apple Watch / Mac 嗎？</span>
-                            <span data-lang="en" style="display:none;">Does it work on Apple Watch or Mac?</span>
-                            <i class="fas fa-plus"></i>
-                        </summary>
-                        <p data-lang="zh">目前只做 iPhone 與 iPad。Apple Watch / Mac 不在這次的範圍內。</p>
-                        <p data-lang="en" style="display:none;">iPhone and iPad only for now. Apple Watch and Mac aren't in scope.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>
-                            <span data-lang="zh">價格怎麼算？</span>
-                            <span data-lang="en" style="display:none;">How much does it cost?</span>
-                            <i class="fas fa-plus"></i>
-                        </summary>
-                        <p data-lang="zh">免費版可建立 1 個自訂設定檔。Pro 解鎖無限設定檔、進階觸發、聽力健康、iCloud 分享。</p>
-                        <p data-lang="en" style="display:none;">Free gets 1 custom profile. Pro unlocks unlimited profiles, advanced triggers, Hearing Health, and iCloud sharing.</p>
-                    </details>
-
-                    <details class="faq-item">
-                        <summary>
-                            <span data-lang="zh">會耗電嗎？</span>
-                            <span data-lang="en" style="display:none;">Will it drain my battery?</span>
-                            <i class="fas fa-plus"></i>
-                        </summary>
-                        <p data-lang="zh">不會。App 不在背景跑，只在你打開來編輯設定檔時運作。</p>
-                        <p data-lang="en" style="display:none;">No. The app doesn't run in the background — only when you open it to edit profiles.</p>
-                    </details>
+                    <details class="faq-item"><summary><span data-lang="zh">iOS 真的能為不同 App 設定音量嗎？</span><span data-lang="en" style="display:none;">Can iOS really set a different volume for each app?</span><i class="fas fa-plus"></i></summary><p data-lang="zh">App Volume 不會建立多個音訊混音器。它使用 Apple「捷徑」的 App 開啟觸發與「設定音量」動作，在某個 App 進入前景時調整 iOS 唯一的媒體音量。</p><p data-lang="en" style="display:none;">App Volume does not create separate audio mixers. It uses Apple's Shortcuts App trigger and Set Volume action to adjust iOS's single media volume when an app enters the foreground.</p></details>
+                    <details class="faq-item"><summary><span data-lang="zh">每個 App 都要建立一條自動化嗎？</span><span data-lang="en" style="display:none;">Do I need a separate automation for every app?</span><i class="fas fa-plus"></i></summary><p data-lang="zh">不用。iOS / iPadOS 18.2 以上只要一條 App 個人自動化，在觸發條件中一次勾選所有要控制的 App。之後新增 App 規則時，記得把該 App 加進同一個觸發選擇器。</p><p data-lang="en" style="display:none;">No. On iOS / iPadOS 18.2 or later, one App Personal Automation can contain every app you control. When you add a rule later, remember to add that app to the same trigger picker.</p></details>
+                    <details class="faq-item"><summary><span data-lang="zh">耳機音量支援哪些耳機？</span><span data-lang="en" style="display:none;">Which headphones work with separate headphone volume?</span><i class="fas fa-plus"></i></summary><p data-lang="zh">支援你能在「捷徑」藍牙個人自動化中選擇的藍牙耳機。需要連線與中斷兩個 helper 自動化。有線耳機不支援，因為這套流程依賴 Apple 的藍牙連線觸發。</p><p data-lang="en" style="display:none;">It works with Bluetooth headphones you can select in a Shortcuts Bluetooth Personal Automation. Two helper automations cover connect and disconnect. Wired headphones are unsupported because the setup relies on Apple's Bluetooth connection trigger.</p></details>
+                    <details class="faq-item"><summary><span data-lang="zh">背景播放有什麼限制？</span><span data-lang="en" style="display:none;">What are the limits with background audio?</span><i class="fas fa-plus"></i></summary><p data-lang="zh">iOS 只有一個全域媒體音量，且自動化在 App 進入前景時觸發。音樂留在背景播放後，如果你再打開另一個有規則的 App，該規則會改變同一個系統音量；App Volume 無法替兩個同時播放的 App 維持不同音量。</p><p data-lang="en" style="display:none;">iOS has one global media volume, and the automation runs when an app enters the foreground. If music keeps playing in the background and you open another app with a rule, that rule changes the same system volume. App Volume cannot maintain two simultaneous per-stream volumes.</p></details>
+                    <details class="faq-item"><summary><span data-lang="zh">App Volume 要付費或訂閱嗎？</span><span data-lang="en" style="display:none;">Does App Volume require payment or a subscription?</span><i class="fas fa-plus"></i></summary><p data-lang="zh">目前 App Store 上的版本完全免費，沒有訂閱。</p><p data-lang="en" style="display:none;">The current App Store version is free to use and has no subscription.</p></details>
+                    <details class="faq-item"><summary><span data-lang="zh">支援 Apple Watch、Mac 或 CarPlay 嗎？</span><span data-lang="en" style="display:none;">Does it support Apple Watch, Mac, or CarPlay?</span><i class="fas fa-plus"></i></summary><p data-lang="zh">目前只支援 iPhone 與 iPad，不提供 Apple Watch、Mac 或 CarPlay 專用功能。</p><p data-lang="en" style="display:none;">The current version supports iPhone and iPad only, with no dedicated Apple Watch, Mac, or CarPlay features.</p></details>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FINAL CTA / NOTIFY ===== -->
-        <section id="notify" class="notify-section">
+        <section id="get-app" class="notify-section">
             <div class="container notify-content">
-                <h2 data-lang="zh">為 iPhone 與 iPad 量身打造<br>準備好上 App Store</h2>
-                <h2 data-lang="en" style="display:none;">Built for iPhone and iPad,<br>coming to the App Store</h2>
-                <p data-lang="zh">v1.0.0 即將在 App Store 推出。想第一時間得知上架通知？關注我們的 GitHub。</p>
-                <p data-lang="en" style="display:none;">v1.0.0 lands on the App Store soon. Want a heads-up when it drops? Follow us on GitHub.</p>
-                <div class="cta-buttons">
-                    <a href="https://github.com/xupStudio" target="_blank" rel="noopener" class="btn btn-primary">
-                        <i class="fab fa-github"></i>
-                        <span data-lang="zh">追蹤 GitHub</span>
-                        <span data-lang="en" style="display:none;">Follow on GitHub</span>
-                    </a>
-                    <a href="support.html" class="btn btn-outline">
-                        <i class="fas fa-envelope"></i>
-                        <span data-lang="zh">聯絡我們</span>
-                        <span data-lang="en" style="display:none;">Contact us</span>
-                    </a>
-                </div>
+                <h2 data-lang="zh">App Volume 已在 App Store 上架</h2><h2 data-lang="en" style="display:none;">App Volume is available on the App Store</h2>
+                <p data-lang="zh">需要 iOS 或 iPadOS 18.2 以上版本。下載後可在 App 內查看完整逐步教學。</p><p data-lang="en" style="display:none;">Requires iOS or iPadOS 18.2 or later. The app includes complete step-by-step setup guides.</p>
+                <div class="cta-buttons"><a href="https://apps.apple.com/app/id6773184998" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-apple"></i><span data-lang="zh">在 App Store 下載</span><span data-lang="en" style="display:none;">Download on the App Store</span></a><a href="support.html" class="btn btn-outline"><i class="fas fa-envelope"></i><span data-lang="zh">取得支援</span><span data-lang="en" style="display:none;">Get Support</span></a></div>
             </div>
         </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/app-icon.png" alt="" class="footer-logo">
-                <div>
-                    <strong>Per-App Volume Profiles</strong>
-                    <span data-lang="zh">每個 App，都有它自己的音量。</span>
-                    <span data-lang="en" style="display:none;">Every app, its own volume.</span>
-                </div>
-            </div>
-
+            <div class="footer-brand"><img src="assets/app-icon.png" alt="" class="footer-logo"><div><strong>App Volume</strong><span data-lang="zh">每個 App，都有它自己的音量。</span><span data-lang="en" style="display:none;">Every app, its own volume.</span></div></div>
             <div class="footer-cols">
-                <div class="footer-col">
-                    <h5 data-lang="zh">產品</h5>
-                    <h5 data-lang="en" style="display:none;">Product</h5>
-                    <a href="#features" data-lang="zh">功能</a>
-                    <a href="#features" data-lang="en" style="display:none;">Features</a>
-                    <a href="#profiles" data-lang="zh">設定檔</a>
-                    <a href="#profiles" data-lang="en" style="display:none;">Profiles</a>
-                    <a href="#hearing" data-lang="zh">聽力健康</a>
-                    <a href="#hearing" data-lang="en" style="display:none;">Hearing Health</a>
-                    <a href="#faq" data-lang="zh">常見問題</a>
-                    <a href="#faq" data-lang="en" style="display:none;">FAQ</a>
-                </div>
-
-                <div class="footer-col">
-                    <h5 data-lang="zh">法律</h5>
-                    <h5 data-lang="en" style="display:none;">Legal</h5>
-                    <a href="privacy.html" data-lang="zh">隱私權政策</a>
-                    <a href="privacy.html" data-lang="en" style="display:none;">Privacy Policy</a>
-                    <a href="terms.html" data-lang="zh">使用條款</a>
-                    <a href="terms.html" data-lang="en" style="display:none;">Terms of Use</a>
-                </div>
-
-                <div class="footer-col">
-                    <h5 data-lang="zh">支援</h5>
-                    <h5 data-lang="en" style="display:none;">Support</h5>
-                    <a href="support.html" data-lang="zh">聯絡支援</a>
-                    <a href="support.html" data-lang="en" style="display:none;">Contact Support</a>
-                    <a href="https://github.com/xupStudio" target="_blank" rel="noopener">GitHub</a>
-                </div>
+                <div class="footer-col"><h5 data-lang="zh">產品</h5><h5 data-lang="en" style="display:none;">Product</h5><a href="#features" data-lang="zh">功能</a><a href="#features" data-lang="en" style="display:none;">Features</a><a href="#modes" data-lang="zh">情境模式</a><a href="#modes" data-lang="en" style="display:none;">Modes</a><a href="#headphones" data-lang="zh">耳機音量</a><a href="#headphones" data-lang="en" style="display:none;">Headphones</a><a href="#faq" data-lang="zh">常見問題</a><a href="#faq" data-lang="en" style="display:none;">FAQ</a></div>
+                <div class="footer-col"><h5 data-lang="zh">法律</h5><h5 data-lang="en" style="display:none;">Legal</h5><a href="privacy.html" data-lang="zh">隱私權政策</a><a href="privacy.html" data-lang="en" style="display:none;">Privacy Policy</a><a href="terms.html" data-lang="zh">使用條款</a><a href="terms.html" data-lang="en" style="display:none;">Terms of Use</a></div>
+                <div class="footer-col"><h5 data-lang="zh">支援</h5><h5 data-lang="en" style="display:none;">Support</h5><a href="support.html" data-lang="zh">聯絡支援</a><a href="support.html" data-lang="en" style="display:none;">Contact Support</a><a href="https://github.com/xupStudio" target="_blank" rel="noopener">GitHub</a></div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <span>© 2026 xup Studio · Per-App Volume Profiles</span>
-            <span class="footer-badge"><i class="fab fa-apple"></i> Designed for iPhone &amp; iPad</span>
-        </div>
+        <div class="footer-bottom"><span>© 2026 xup Studio · App Volume</span><span class="footer-badge"><i class="fab fa-apple"></i> Designed for iPhone &amp; iPad</span></div>
     </footer>
-
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>

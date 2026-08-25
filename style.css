@@ -744,6 +744,17 @@ a { color: inherit; text-decoration: none; transition: all 0.2s var(--ease); }
     box-shadow: none;
 }
 
+.mode-night-icon { background: linear-gradient(135deg, #FF6B4A, #FFB347); }
+.mode-public-icon { background: linear-gradient(135deg, #F472B6, #FB7185); }
+.mode-gaming-icon { background: linear-gradient(135deg, #A78BFA, #EC4899); }
+.mode-social-icon { background: linear-gradient(135deg, #34D399, #60A5FA); }
+
+.mode-none-pack { --pack-gradient: linear-gradient(135deg, #64748B, #94A3B8); }
+.mode-night-pack { --pack-gradient: linear-gradient(135deg, #FF6B4A, #FFB347); }
+.mode-public-pack { --pack-gradient: linear-gradient(135deg, #F472B6, #FB7185); }
+.mode-gaming-pack { --pack-gradient: linear-gradient(135deg, #A78BFA, #EC4899); }
+.mode-social-pack { --pack-gradient: linear-gradient(135deg, #34D399, #60A5FA); }
+
 /* =========================================
    10. HEARING HEALTH
    ========================================= */
@@ -797,6 +808,61 @@ a { color: inherit; text-decoration: none; transition: all 0.2s var(--ease); }
     font-size: 0.7rem;
     flex-shrink: 0;
     margin-top: 2px;
+}
+
+/* Bluetooth helper setup visual */
+.helper-flow {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+.helper-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.025);
+    text-align: left;
+}
+
+.helper-card.active {
+    border-color: rgba(255, 107, 74, 0.5);
+    background: rgba(255, 107, 74, 0.08);
+}
+
+.helper-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent-light);
+    background: rgba(255, 107, 74, 0.12);
+    font-size: 1.2rem;
+}
+
+.helper-card strong,
+.helper-card span:not(.helper-icon) {
+    display: block;
+}
+
+.helper-card span:not(.helper-icon) {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.helper-arrow {
+    padding: 10px 0;
+    color: var(--text-muted);
+    text-align: center;
 }
 
 /* ===== dB METER ===== */

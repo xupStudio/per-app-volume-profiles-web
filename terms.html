@@ -4,19 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use — Per-App Volume Profiles</title>
-    <meta name="description" content="Terms of Use for Per-App Volume Profiles (AppVolume).">
+    <title>Terms of Use — App Volume</title>
+    <meta name="description" content="Terms of Use for App Volume.">
     <meta name="theme-color" content="#0E0F1A">
-
     <link rel="icon" href="assets/app-icon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/app-icon.png">
     <link rel="stylesheet" href="style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
@@ -24,201 +20,163 @@
     <nav class="navbar">
         <div class="container nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="assets/app-icon.png" alt="Per-App Volume Profiles" class="nav-logo-img">
-                <div class="nav-logo-text">
-                    <span class="nav-logo-name">Per-App Volume Profiles</span>
-                    <span class="nav-logo-tag">AppVolume</span>
-                </div>
+                <img src="assets/app-icon.png" alt="App Volume" class="nav-logo-img">
+                <div class="nav-logo-text"><span class="nav-logo-name">App Volume</span><span class="nav-logo-tag" data-lang="zh">應用音量</span><span class="nav-logo-tag" data-lang="en" style="display:none;">A volume per app</span></div>
             </a>
             <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-                    <i class="fas fa-globe"></i>
-                    <span class="lang-toggle-text">EN</span>
-                </button>
-                <a href="index.html" class="btn btn-download">
-                    <i class="fas fa-arrow-left"></i>
-                    <span data-lang="zh">回首頁</span>
-                    <span data-lang="en" style="display:none;">Back</span>
-                </a>
+                <button type="button" class="lang-toggle" id="langToggle" aria-label="Switch language"><i class="fas fa-globe"></i><span class="lang-toggle-text">EN</span></button>
+                <a href="index.html" class="btn btn-download"><i class="fas fa-arrow-left"></i><span data-lang="zh">回首頁</span><span data-lang="en" style="display:none;">Back</span></a>
             </div>
         </div>
     </nav>
 
     <main class="container">
         <article class="legal-section">
-            <h1 data-lang="zh">使用條款</h1>
-            <h1 data-lang="en" style="display:none;">Terms of Use</h1>
+            <h1 data-lang="zh">使用條款</h1><h1 data-lang="en" style="display:none;">Terms of Use</h1>
+            <p class="updated"><span data-lang="zh">最後更新：2026 年 8 月 24 日</span><span data-lang="en" style="display:none;">Last updated: 24 August 2026</span></p>
 
-            <p class="updated">
-                <span data-lang="zh">最後更新：2026 年 5 月 26 日</span>
-                <span data-lang="en" style="display:none;">Last updated: 26 May 2026</span>
-            </p>
-
-            <!-- zh -->
             <div data-lang="zh">
-                <p>歡迎使用 Per-App Volume Profiles（主畫面 icon 顯示為 <strong>AppVolume</strong>，以下簡稱「本 App」）。下載、安裝或使用本 App 即表示你同意以下條款。</p>
+                <p>歡迎使用 App Volume（繁體中文名稱「應用音量」，以下稱「本 App」）。下載、安裝或使用本 App，即表示你同意以下條款。</p>
 
-                <h2>1. 服務說明</h2>
-                <p>本 App 提供 iPhone 與 iPad 上的 per-app 音量管理功能。其運作機制依賴 iOS 系統提供的 Shortcuts、Personal Automations、HealthKit、StoreKit、CloudKit 等 API。本 App 不會修改、繞過或破解任何 iOS 系統限制。</p>
+                <h2>1. 服務與系統需求</h2>
+                <p>本 App 提供 iPhone 與 iPad 上的情境模式、App 音量規則、全域規則、藍牙耳機音量、Widget、控制中心、探索、分享與 iCloud 私人備份功能。需要 iOS 或 iPadOS 18.2 以上版本。本 App 不會越獄、修改或繞過 iOS / iPadOS 的系統限制。</p>
 
-                <h2>2. iOS Shortcuts 依賴聲明</h2>
-                <p>本 App 的音量切換實際上是由 <strong>iOS Shortcuts 系統</strong> 執行。我們透過 <code>shortcuts://create-shortcut</code> 與 Personal Automation 設定指南幫你建立必要的 Shortcuts 與自動化。執行結果受 iOS 系統行為影響，我們無法保證 100% 即時或無延遲（例如 Apple 已知的 Set Volume timing race condition 在某些情況可能造成短暫延遲）。</p>
+                <h2>2. Apple「捷徑」與個人自動化</h2>
+                <p>App 音量規則實際由 Apple「捷徑」執行。你必須安裝 Per-App Volume 範本，並自行在「捷徑」App 建立一條 App 個人自動化、勾選要控制的 App、選擇該範本並開啟「立即執行」。Apple 沒有提供第三方 App 建立或修改個人自動化的 API，因此本 App 無法替你完成這一步。</p>
+                <p>切換情境模式不必重建自動化；但新增 App 規則後，你有責任把新 App 加入原本自動化的觸發選擇器。</p>
 
-                <h2>3. 訂閱與付款</h2>
+                <h2>3. iOS 音量模型與背景播放限制</h2>
+                <p>iOS / iPadOS 提供的是一個全域媒體音量，不是每個 App 各自獨立的音訊混音器。本 App 在某個 App 進入前景時，透過「捷徑」把這個全域媒體音量調整到目前情境模式的數值。</p>
+                <p>如果音訊 App 繼續在背景播放，之後進入前景的 App 規則仍會改變同一個全域媒體音量。本 App 無法分別控制兩個同時播放的音訊串流，也無法保證 Apple「捷徑」每次都即時、不中斷或完全沒有系統延遲。</p>
 
-                <h3>3.1 免費版</h3>
-                <p>包含 1 個自訂設定檔、3 條規則、5 組內建情境預覽。</p>
+                <h2>4. 藍牙耳機音量限制</h2>
+                <p>耳機獨立音量只支援透過 Apple「捷徑」藍牙個人自動化選擇的藍牙耳機。你必須安裝 Connect 與 Disconnect 兩個 helper 捷徑，並各自建立連線與中斷自動化。</p>
+                <p><strong>有線耳機不支援。</strong>Apple 沒有提供對應的有線耳機自動化觸發，且 iOS 不會可靠地向本 App 揭露目前音訊輸出。本 App 記錄的是 helper 自動化通知的狀態；如果自動化未執行、選錯藍牙裝置或輸出路徑在其他地方改變，可能套用到不符合預期的音量。</p>
 
-                <h3>3.2 Pro 訂閱</h3>
-                <p>解鎖無限設定檔、無限規則、進階觸發（Focus Mode / 時段 / 耳機分流）、聽力健康整合、iCloud 分享功能。訂閱費用、週期、續訂條款依 App Store 顯示的當地價格為準。</p>
-
-                <h3>3.3 付款處理</h3>
-                <p>所有付款由 Apple App Store 處理。除非在到期前 24 小時關閉自動續訂，否則訂閱會自動續期。可於 iOS 設定 → [你的名字] → 訂閱項目管理。</p>
-
-                <h3>3.4 退款</h3>
-                <p>退款請求一律透過 <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">Apple Report a Problem</a> 申請。我們沒有獨立退款管道。</p>
-
-                <h2>4. 使用者責任</h2>
+                <h2>5. 你的設定與安全責任</h2>
                 <ul>
-                    <li>你必須擁有合法授權使用 App Store 帳戶、HealthKit、iCloud 等 Apple 服務。</li>
-                    <li>不得逆向工程、反編譯本 App。</li>
-                    <li>不得將 App 的功能轉售、商業化散布或濫用至 App Store Guideline 不允許的範圍。</li>
-                    <li>聽力相關功能僅供參考，請勿視為醫療建議。</li>
+                    <li>你負責建立、檢查與維護自己的情境模式、App 規則與「捷徑」自動化。</li>
+                    <li>請先在安全環境與低音量下測試，再依賴任何自動音量變更。</li>
+                    <li>切換輸出裝置、連接藍牙耳機或修改規則後，請確認實際系統音量。</li>
+                    <li>請勿只依賴本 App 管理可能影響安全、警示、通訊或聽力的音量。</li>
                 </ul>
 
-                <h2>5. 智慧財產權</h2>
-                <p>本 App 的程式碼、設計、品牌（Per-App Volume Profiles、AppVolume）皆屬 xup Studio 所有。所有商標權保留。第三方依賴項目（如 Firebase iOS SDK）依其各自授權條款使用。</p>
+                <h2>6. 探索、分享與使用者內容</h2>
+                <p>「探索」中的情境模式是可編輯的起點，不保證適合你的裝置、App 或環境。匯入後請自行檢查音量。</p>
+                <p>分享連結會包含情境模式名稱與匯入所需規則，包括 App 識別資訊與音量值。任何取得連結的人都可以查看與匯入。你保留自己內容的權利，但授權本 App 為產生、顯示與匯入分享內容而處理該資料。你不得分享違法、侵權、惡意或含有他人機密資訊的內容。</p>
 
-                <h2>6. 免責聲明</h2>
-                <p>本 App 「按現況」（AS IS）提供，不保證：</p>
+                <h2>7. iCloud 私人備份</h2>
+                <p>備份資料存放於你自己的 Apple CloudKit 私人資料庫。本功能是備份與還原，不是即時跨裝置同步。我們不保證備份永遠可用、零延遲或不會受到 iCloud 登入狀態、容量、網路、Apple 服務中斷或系統變更影響。請保留你認為必要的其他紀錄，並在還原後檢查結果。</p>
+
+                <h2>8. 線上服務與回饋</h2>
+                <p>探索、遠端設定、更新檢查、捷徑範本位置與回饋提交可能依賴 Firebase 或其他網路服務。服務可能因維護、網路、平台政策或第三方中斷而暫時無法使用。回饋內容必須由你主動送出；請勿提交你無權分享的資料。</p>
+
+                <h2>9. 費用</h2>
+                <p>目前 App Store 上的版本免費提供，沒有訂閱。App Store 頁面會顯示當下適用的價格與商業條件；若未來有所變更，我們會在適用前更新相關說明與條款。</p>
+
+                <h2>10. 禁止行為</h2>
                 <ul>
-                    <li>適合任何特定用途。</li>
-                    <li>無錯誤或不中斷。</li>
-                    <li>與所有 iOS 版本完全相容（特別是 iOS 18.2 以前的 Personal Automations 機制差異）。</li>
+                    <li>不得逆向工程、反編譯、破壞或未經授權存取本 App 或其線上服務，但適用法律明確允許者除外。</li>
+                    <li>不得濫用探索、分享或回饋功能進行垃圾訊息、騷擾、詐欺、侵權或干擾服務。</li>
+                    <li>不得冒充他人或試圖繞過安全、驗證及使用限制。</li>
                 </ul>
-                <p>聽力健康提醒僅基於 HealthKit 數據，<strong>不構成醫療診斷或建議</strong>。如有聽力問題請諮詢專業醫師。</p>
 
-                <h2>7. 責任限制</h2>
-                <p>在法律允許的最大範圍內，xup Studio 對因使用或無法使用本 App 而導致的任何直接、間接、附帶、衍生性損失不承擔責任，包括但不限於資料遺失、收益損失、聽力損傷。</p>
+                <h2>11. 智慧財產權</h2>
+                <p>本 App 的程式碼、設計、品牌 App Volume 與原創內容屬 xup Studio 或其授權人所有。Apple、「捷徑」、iCloud 及其他第三方名稱與商標屬各自權利人所有。</p>
 
-                <h2>8. 終止</h2>
-                <p>你可以隨時刪除本 App 終止本條款。我們保留在合理理由下暫停或終止你存取本 App 部分功能的權利。</p>
+                <h2>12. 隱私</h2>
+                <p>我們如何處理資料，請參閱<a href="privacy.html">隱私權政策</a>。使用本 App 即表示你了解本 App 依該政策處理資料。</p>
 
-                <h2>9. 條款變更</h2>
-                <p>條款若有實質變更，會在 App 內或本網頁公告。持續使用視為接受新版條款。</p>
+                <h2>13. 免責聲明與責任限制</h2>
+                <p>本 App 依「現狀」與「可用狀態」提供。在法律允許的最大範圍內，我們不保證本 App 或 Apple「捷徑」、CloudKit、Firebase 等第三方服務永遠正確、即時、不間斷、無錯誤或適合特定用途。</p>
+                <p>自動音量變更可能造成音訊過大、過小、未聽見通知或其他非預期結果。App Volume 不是醫療、聽力保護或緊急警示服務。你必須自行確認安全音量與重要警示。在法律允許的最大範圍內，xup Studio 不對因使用或無法使用本 App 所生的直接、間接、附帶或衍生損失負責，包括資料遺失、錯過警示、聽力傷害或其他音量變更後果。</p>
 
-                <h2>10. 準據法</h2>
-                <p>本條款依中華民國（臺灣）法律解釋。任何爭議由臺灣臺北地方法院作為第一審管轄法院。</p>
+                <h2>14. 終止、變更與準據法</h2>
+                <p>你可以隨時刪除本 App 停止使用。我們可能為安全、法律、平台要求或產品維護而修改或停止部分功能。條款若有實質變更，會更新本頁日期並在適當時於 App 內說明。</p>
+                <p>本條款依中華民國（臺灣）法律解釋；法律允許範圍內，爭議以臺灣臺北地方法院為第一審管轄法院。你所在地不可排除的消費者權利不受影響。</p>
 
-                <h2>11. 聯絡</h2>
-                <p>條款相關問題：<a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a></p>
+                <h2>15. 聯絡</h2>
+                <p>條款相關問題請寄至 <a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a>。</p>
             </div>
 
-            <!-- en -->
             <div data-lang="en" style="display:none;">
-                <p>Welcome to Per-App Volume Profiles (Home Screen icon labeled <strong>AppVolume</strong>; hereafter "the App"). By downloading, installing, or using the App, you agree to these terms.</p>
+                <p>Welcome to App Volume (the “App”). By downloading, installing, or using the App, you agree to these terms.</p>
 
-                <h2>1. Service Description</h2>
-                <p>The App provides per-app volume management on iPhone and iPad. Its operation relies on iOS system APIs including Shortcuts, Personal Automations, HealthKit, StoreKit, and CloudKit. The App does not modify, bypass, or jailbreak any iOS system restrictions.</p>
+                <h2>1. Service &amp; System Requirements</h2>
+                <p>The App provides Modes, app volume rules, Global Rules, Bluetooth headphone volumes, widgets, Control Center controls, Discover, sharing, and private iCloud backup on iPhone and iPad. It requires iOS or iPadOS 18.2 or later. The App does not jailbreak, modify, or bypass iOS or iPadOS restrictions.</p>
 
-                <h2>2. iOS Shortcuts Dependency</h2>
-                <p>Volume switching is actually executed by the <strong>iOS Shortcuts system</strong>. We use <code>shortcuts://create-shortcut</code> and Personal Automation setup guidance to help you build the required Shortcuts and automations. Execution timing is governed by iOS system behavior; we cannot guarantee 100% instant or delay-free execution (e.g. Apple's known Set Volume timing race condition can cause brief delays in some cases).</p>
+                <h2>2. Apple Shortcuts &amp; Personal Automations</h2>
+                <p>App volume rules are executed by Apple Shortcuts. You must install the Per-App Volume template and personally create one App Personal Automation in Shortcuts, select the apps you want to control, choose that template, and enable Run Immediately. Apple provides no API for third-party apps to create or edit Personal Automations, so the App cannot complete this step for you.</p>
+                <p>Switching Modes does not require rebuilding the automation. When you add an app rule, however, you are responsible for adding that app to the existing automation's trigger picker.</p>
 
-                <h2>3. Subscriptions &amp; Payment</h2>
+                <h2>3. iOS Volume Model &amp; Background Playback Limits</h2>
+                <p>iOS and iPadOS provide one global media volume, not a separate audio mixer for every app. When an app enters the foreground, the App uses Shortcuts to adjust that global media volume to the value in the active Mode.</p>
+                <p>If an audio app keeps playing in the background, a rule for the next foreground app still changes the same global media volume. The App cannot independently control two simultaneous audio streams, and it cannot guarantee that Apple Shortcuts will always execute instantly, without interruption, or without system delay.</p>
 
-                <h3>3.1 Free Tier</h3>
-                <p>Includes 1 custom profile, 3 rules, and preview of 5 built-in template packs.</p>
+                <h2>4. Bluetooth Headphone Volume Limits</h2>
+                <p>Separate headphone volume supports only Bluetooth headphones selected in an Apple Shortcuts Bluetooth Personal Automation. You must install the Connect and Disconnect helper shortcuts and create separate connect and disconnect automations.</p>
+                <p><strong>Wired headphones are not supported.</strong> Apple does not provide a corresponding wired-headphone automation trigger, and iOS does not reliably expose the current audio output to the App. The App records the state reported by the helper automations. If an automation does not run, the wrong Bluetooth device is selected, or the output route changes elsewhere, an unexpected volume may be applied.</p>
 
-                <h3>3.2 Pro Subscription</h3>
-                <p>Unlocks unlimited profiles, unlimited rules, advanced triggers (Focus Mode / time of day / headphone routing), Hearing Health integration, and iCloud profile sharing. Subscription pricing, billing cycles, and renewal terms follow whatever the App Store displays in your locale.</p>
-
-                <h3>3.3 Payment Processing</h3>
-                <p>All payments are handled by Apple App Store. Subscriptions auto-renew unless turned off at least 24 hours before the renewal date. Manage via iOS Settings → [your name] → Subscriptions.</p>
-
-                <h3>3.4 Refunds</h3>
-                <p>Refund requests must go through <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">Apple's Report a Problem</a>. We do not have an independent refund channel.</p>
-
-                <h2>4. User Responsibilities</h2>
+                <h2>5. Your Setup &amp; Safety Responsibilities</h2>
                 <ul>
-                    <li>You must have valid authorization to use your App Store account, HealthKit, iCloud, and other Apple services.</li>
-                    <li>You may not reverse engineer or decompile the App.</li>
-                    <li>You may not resell, commercially redistribute, or use the App's functionality in ways prohibited by App Store Guidelines.</li>
-                    <li>Hearing-related features are for reference only and should not be treated as medical advice.</li>
+                    <li>You are responsible for creating, checking, and maintaining your Modes, app rules, and Shortcuts automations.</li>
+                    <li>Test at a low volume in a safe environment before relying on any automatic volume change.</li>
+                    <li>Verify the actual system volume after changing output devices, connecting Bluetooth headphones, or editing rules.</li>
+                    <li>Do not rely on the App alone to manage volume that may affect safety, alerts, communication, or hearing.</li>
                 </ul>
 
-                <h2>5. Intellectual Property</h2>
-                <p>The App's code, design, and brand (Per-App Volume Profiles, AppVolume) are owned by xup Studio. All trademarks reserved. Third-party dependencies (such as Firebase iOS SDK) are used under their respective licenses.</p>
+                <h2>6. Discover, Sharing &amp; User Content</h2>
+                <p>Modes in Discover are editable starting points and are not guaranteed to suit your device, apps, or environment. Review their volume values after import.</p>
+                <p>A share link contains the Mode name and rules needed for import, including app identifiers and volume values. Anyone with the link can view and import them. You retain your rights in your content but grant the App permission to process it as needed to create, display, and import the share. You may not share unlawful, infringing, malicious, or confidential content belonging to another person.</p>
 
-                <h2>6. Disclaimer</h2>
-                <p>The App is provided "AS IS" with no warranty of:</p>
+                <h2>7. Private iCloud Backup</h2>
+                <p>Backup data is stored in your own Apple CloudKit private database. This feature is backup and restore, not live cross-device sync. We do not guarantee that backups will always be available, instant, or unaffected by iCloud sign-in state, capacity, network access, Apple service interruption, or system changes. Keep any other records you consider necessary and check the result after restore.</p>
+
+                <h2>8. Online Services &amp; Feedback</h2>
+                <p>Discover, remote configuration, update checks, shortcut template locations, and feedback submission may depend on Firebase or other network services. They may be temporarily unavailable due to maintenance, network conditions, platform policy, or third-party interruption. Feedback is sent only when you submit it; do not submit information you are not authorized to share.</p>
+
+                <h2>9. Fees</h2>
+                <p>The current App Store version is provided free of charge and has no subscription. The App Store page shows the price and commercial terms currently in effect. If those change in the future, we will update the applicable disclosures and terms before they apply.</p>
+
+                <h2>10. Prohibited Conduct</h2>
                 <ul>
-                    <li>Suitability for any particular purpose.</li>
-                    <li>Being error-free or uninterrupted.</li>
-                    <li>Full compatibility with all iOS versions (notably the Personal Automations behavior differences before iOS 18.2).</li>
+                    <li>Do not reverse engineer, decompile, disrupt, or access the App or its online services without authorization, except where applicable law expressly permits it.</li>
+                    <li>Do not misuse Discover, sharing, or feedback for spam, harassment, fraud, infringement, or service disruption.</li>
+                    <li>Do not impersonate others or attempt to bypass security, authentication, or usage controls.</li>
                 </ul>
-                <p>Hearing Health notifications are based solely on HealthKit data and <strong>do not constitute medical diagnosis or advice</strong>. Consult a healthcare professional for hearing concerns.</p>
 
-                <h2>7. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by law, xup Studio shall not be liable for any direct, indirect, incidental, or consequential damages arising from use or inability to use the App, including but not limited to loss of data, lost revenue, or hearing damage.</p>
+                <h2>11. Intellectual Property</h2>
+                <p>The App's code, design, App Volume brand, and original content belong to xup Studio or its licensors. Apple, Shortcuts, iCloud, and other third-party names and marks belong to their respective owners.</p>
 
-                <h2>8. Termination</h2>
-                <p>You may terminate this agreement at any time by uninstalling the App. We reserve the right to suspend or terminate access to certain features for reasonable cause.</p>
+                <h2>12. Privacy</h2>
+                <p>See our <a href="privacy.html">Privacy Policy</a> for how data is processed. By using the App, you acknowledge that processing.</p>
 
-                <h2>9. Changes</h2>
-                <p>If we make material changes to these terms, we'll notify you in-app or on this page. Continued use constitutes acceptance.</p>
+                <h2>13. Disclaimers &amp; Limitation of Liability</h2>
+                <p>The App is provided “AS IS” and “AS AVAILABLE.” To the maximum extent permitted by law, we do not warrant that the App or third-party services such as Apple Shortcuts, CloudKit, or Firebase will always be correct, immediate, uninterrupted, error-free, or fit for a particular purpose.</p>
+                <p>Automatic volume changes can make audio louder or quieter than expected, contribute to missed alerts, or cause other unintended results. App Volume is not a medical, hearing-protection, or emergency-alert service. You must verify safe volume and important alerts yourself. To the maximum extent permitted by law, xup Studio is not liable for direct, indirect, incidental, or consequential loss arising from use or inability to use the App, including loss of data, missed alerts, hearing injury, or other consequences of volume changes.</p>
 
-                <h2>10. Governing Law</h2>
-                <p>These terms are governed by the laws of the Republic of China (Taiwan). Disputes shall be heard in the Taipei District Court as the court of first instance.</p>
+                <h2>14. Termination, Changes &amp; Governing Law</h2>
+                <p>You may stop using the App at any time by deleting it. We may modify or discontinue features for security, legal, platform, or maintenance reasons. If these terms change materially, we will update the date on this page and provide an in-app explanation when appropriate.</p>
+                <p>These terms are governed by the laws of the Republic of China (Taiwan). To the extent permitted by law, disputes will be heard in the Taipei District Court as the court of first instance. Non-waivable consumer rights in your location remain unaffected.</p>
 
-                <h2>11. Contact</h2>
-                <p>Questions about these terms: <a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a></p>
+                <h2>15. Contact</h2>
+                <p>Questions about these terms: <a href="mailto:xup654m42@gmail.com">xup654m42@gmail.com</a>.</p>
             </div>
         </article>
     </main>
 
     <footer class="footer">
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/app-icon.png" alt="" class="footer-logo">
-                <div>
-                    <strong>Per-App Volume Profiles</strong>
-                    <span data-lang="zh">每個 App，都有它自己的音量。</span>
-                    <span data-lang="en" style="display:none;">Every app, its own volume.</span>
-                </div>
-            </div>
+            <div class="footer-brand"><img src="assets/app-icon.png" alt="" class="footer-logo"><div><strong>App Volume</strong><span data-lang="zh">每個 App，都有它自己的音量。</span><span data-lang="en" style="display:none;">Every app, its own volume.</span></div></div>
             <div class="footer-cols">
-                <div class="footer-col">
-                    <h5 data-lang="zh">產品</h5>
-                    <h5 data-lang="en" style="display:none;">Product</h5>
-                    <a href="index.html#features" data-lang="zh">功能</a>
-                    <a href="index.html#features" data-lang="en" style="display:none;">Features</a>
-                    <a href="index.html#hearing" data-lang="zh">聽力健康</a>
-                    <a href="index.html#hearing" data-lang="en" style="display:none;">Hearing Health</a>
-                </div>
-                <div class="footer-col">
-                    <h5 data-lang="zh">法律</h5>
-                    <h5 data-lang="en" style="display:none;">Legal</h5>
-                    <a href="privacy.html" data-lang="zh">隱私權政策</a>
-                    <a href="privacy.html" data-lang="en" style="display:none;">Privacy Policy</a>
-                    <a href="terms.html" data-lang="zh">使用條款</a>
-                    <a href="terms.html" data-lang="en" style="display:none;">Terms of Use</a>
-                </div>
-                <div class="footer-col">
-                    <h5 data-lang="zh">支援</h5>
-                    <h5 data-lang="en" style="display:none;">Support</h5>
-                    <a href="support.html" data-lang="zh">聯絡支援</a>
-                    <a href="support.html" data-lang="en" style="display:none;">Contact Support</a>
-                </div>
+                <div class="footer-col"><h5 data-lang="zh">產品</h5><h5 data-lang="en" style="display:none;">Product</h5><a href="index.html#features" data-lang="zh">功能</a><a href="index.html#features" data-lang="en" style="display:none;">Features</a><a href="index.html#modes" data-lang="zh">情境模式</a><a href="index.html#modes" data-lang="en" style="display:none;">Modes</a><a href="index.html#headphones" data-lang="zh">耳機音量</a><a href="index.html#headphones" data-lang="en" style="display:none;">Headphones</a></div>
+                <div class="footer-col"><h5 data-lang="zh">法律</h5><h5 data-lang="en" style="display:none;">Legal</h5><a href="privacy.html" data-lang="zh">隱私權政策</a><a href="privacy.html" data-lang="en" style="display:none;">Privacy Policy</a><a href="terms.html" data-lang="zh">使用條款</a><a href="terms.html" data-lang="en" style="display:none;">Terms of Use</a></div>
+                <div class="footer-col"><h5 data-lang="zh">支援</h5><h5 data-lang="en" style="display:none;">Support</h5><a href="support.html" data-lang="zh">聯絡支援</a><a href="support.html" data-lang="en" style="display:none;">Contact Support</a></div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <span>© 2026 xup Studio · Per-App Volume Profiles</span>
-            <span class="footer-badge"><i class="fab fa-apple"></i> Designed for iPhone &amp; iPad</span>
-        </div>
+        <div class="footer-bottom"><span>© 2026 xup Studio · App Volume</span><span class="footer-badge"><i class="fab fa-apple"></i> Designed for iPhone &amp; iPad</span></div>
     </footer>
-
-    <script src="js/i18n.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script><script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,75 +1,69 @@
-# Per-App Volume Profiles — Marketing Site
+# App Volume — Marketing Site
 
-Static marketing website for **Per-App Volume Profiles** (Home Screen icon label: **AppVolume**) — per-app volume management for iPhone and iPad.
+Static bilingual website for **App Volume**（繁體中文品牌名：**應用音量**）, a per-app volume utility for iPhone and iPad.
 
-🌐 **Live**: [perappvolume.com](https://perappvolume.com) *(once DNS is wired up)*
-📱 **App Store**: Coming soon
+- **App Store**: [apps.apple.com/app/id6773184998](https://apps.apple.com/app/id6773184998)
+- **System requirement**: iOS / iPadOS 18.2 or later
+- **Current availability**: live on the App Store; the current version is free and has no subscription
+
+## Product scope represented on this site
+
+- App volume rules grouped into **Modes / 情境模式**
+- One Apple Shortcuts App Personal Automation for all selected apps
+- Separate Bluetooth headphone volume using Connect and Disconnect helper automations; wired headphones are not supported
+- Home Screen and Lock Screen widgets plus Control Center controls
+- Global Rules, Discover, Mode sharing, and private iCloud backup / restore
+- Firebase Analytics and Crashlytics with an in-app opt-out, anonymous Firebase Authentication, and voluntary in-app feedback
+
+The site intentionally does not claim Focus or time-based triggers, HealthKit or hearing-health features, wired-headphone support, live cross-device iCloud sync, a paid Pro tier, or an automation-creation wizard.
 
 ## Tech stack
 
-- Plain HTML + CSS + Vanilla JS — no build step, no framework
-- Bilingual: 🇹🇼 繁體中文 / 🇬🇧 English (toggle via `data-lang` attribute)
-- Google Fonts: Inter + Noto Sans TC
-- Font Awesome 6 (CDN)
-- Static-friendly — deploy anywhere (GitHub Pages, Cloudflare Pages, Netlify, Vercel)
+- Plain HTML + CSS + vanilla JavaScript; no build step or framework
+- Traditional Chinese and English via `data-lang` attributes
+- Google Fonts: Inter and Noto Sans TC
+- Font Awesome 6 from cdnjs
+- Static hosting compatible with GitHub Pages, Cloudflare Pages, Netlify, Vercel, or Firebase Hosting
 
 ## Local preview
 
-No dependencies. Just open `index.html` in a browser, or:
+No dependencies are required. Open `index.html` directly, or run a local static server:
 
 ```bash
-# Python
 python3 -m http.server 8000
-
-# Node
-npx serve .
 ```
 
 Then visit <http://localhost:8000>.
 
 ## Structure
 
-```
+```text
 .
-├── index.html          # Landing page
-├── privacy.html        # Privacy Policy
+├── index.html          # Product landing page
+├── privacy.html        # App and website privacy policy
 ├── terms.html          # Terms of Use
-├── support.html        # Support & FAQ
-├── style.css           # All styling
+├── support.html        # Setup help, FAQ, and contact
+├── style.css           # Shared styling
 ├── js/
-│   ├── i18n.js         # Language toggle (zh ⇄ en), persists in localStorage
-│   └── main.js         # Mobile menu, scroll reveal, nav highlight
+│   ├── i18n.js         # Language toggle; preference stored in localStorage
+│   └── main.js         # Mobile menu, scroll reveal, and navigation behavior
 └── assets/
-    └── app-icon.png    # 1024×1024 app icon
+    └── app-icon.png    # App icon
 ```
 
 ## Bilingual content pattern
-
-Every translatable node uses `data-lang="zh"` or `data-lang="en"`:
 
 ```html
 <h1 data-lang="zh">每個 App，都有它自己的音量。</h1>
 <h1 data-lang="en" style="display:none;">Every app, its own volume.</h1>
 ```
 
-Defaults to Traditional Chinese; toggle button (top-right nav) swaps to English. Choice persists via `localStorage` key `pavp-lang`.
+Traditional Chinese is the default. The navigation toggle switches to English, and `js/i18n.js` stores the choice in the `pavp-lang` localStorage key for backward compatibility.
 
-## Deploy
+## Deployment
 
-### GitHub Pages
-
-```bash
-# Push to main, enable Pages from the repo settings → Pages → Branch: main / root
-```
-
-### Cloudflare Pages
-
-Connect this repo. Build command: *(none)*. Build output: `/`.
-
-### Custom domain
-
-Add a `CNAME` file with your domain (e.g. `perappvolume.com`) and configure DNS.
+This repository is static. Serve the repository root as the site root; no build command is needed. Deployment, DNS, and production publishing are handled separately from content changes.
 
 ## License
 
-Code: MIT. Brand, copy, and `app-icon.png` © xup Studio — not licensed for reuse.
+Code: MIT. Brand, copy, and `assets/app-icon.png` © xup Studio and are not licensed for reuse.
